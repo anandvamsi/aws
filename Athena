@@ -1,0 +1,66 @@
+
+Query s3 Access logs 
+
+step1 :- Identity the bucket which needs to monitored and enable server access logs in the properties of the bucket(specify a different bucket to save the logs)
+setp2: Create third bucket for saving Athena results 
+step3:- Configure the third bucket name in the Athena settings
+
+step3a. Create a database
+step3b. Create a table
+
+
+
+Amazon Athena ::- Introduction
+-----------------
+serverless query service to perform analytics aginst s3 objects
+uses std SQL language to query the files 
+suppoets CSV,JSON,ORC,Avro
+Pricing is $5/TB scanned
+user compressed or columnar data for cost saving
+Usecases BI/Analytucs,reporting  and query VPC flow logs,ELB logs .cloud trails
+
+
+#queries for AWS s3 logs
+
+step1: Create a bucket for Athena results and mention the same bucket details in the Athena settings
+
+>create database XXXX_com_access_logs
+
+
+CREATE EXTERNAL TABLE `XXXX_com_access_logs.XXXo_logs`(
+  `bucketowner` STRING,
+  `bucket_name` STRING,
+  `requestdatetime` STRING,
+  `remoteip` STRING,
+  `requester` STRING,
+  `requestid` STRING,
+  `operation` STRING,
+  `key` STRING,
+  `request_uri` STRING,
+  `httpstatus` STRING,
+  `errorcode` STRING,
+  `bytessent` BIGINT,
+  `objectsize` BIGINT,
+  `totaltime` STRING,
+  `turnaroundtime` STRING,
+  `referrer` STRING,
+  `useragent` STRING,
+  `versionid` STRING,
+  `hostid` STRING,
+  `sigv` STRING,
+  `ciphersuite` STRING,
+  `authtype` STRING,
+  `endpoint` STRING,
+  `tlsversion` STRING)
+ROW FORMAT SERDE
+  'org.apache.hadoop.hive.serde2.RegexSerDe'
+WITH SERDEPROPERTIES (
+  'input.regex'='([^ ]*) ([^ ]*) \\[(.*?)\\] ([^ ]*) ([^ ]*) ([^ ]*) ([^ ]*) ([^ ]*) (\"[^\"]*\"|-) (-|[0-9]*) ([^ ]*) ([^ ]*) ([^ ]*) ([^ ]*) ([^ ]*) ([^ ]*) (\"[^\"]*\"|-) ([^ ]*)(?: ([^ ]*) ([^ ]*) ([^ ]*) ([^ ]*) ([^ ]*) ([^ ]*))?.*$')
+STORED AS INPUTFORMAT
+  'org.apache.hadoop.mapred.TextInputFormat'
+OUTPUTFORMAT
+  'org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat'
+LOCATION
+  's3://XXXXX.com.downloads/logs/'  :::- Bucket having s3 logs
+  
+  
