@@ -14,11 +14,11 @@ AWS
 
 AWS Global Datacenter
 ---------------------
-- 20 Regions  + 5 soons
+- 27 Regions
 - 61 Availability zones
-- 158 Edge locations 
+- 225 Edge locations 
 - 11 Regional caches
-- 130 services.
+- 200 services.
 
 Regions = Independent Geographic Area
 Availability Zones:- Multiple isolated locations and data centers.
