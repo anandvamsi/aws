@@ -1,5 +1,10 @@
 AWS IAM
 AWS Identity and Access Management (IAM) enables you to manage access to AWS services and resources securely. Using IAM, you can create and manage AWS users and groups, and use permissions to allow and deny their access to AWS resources.
+- Core AWS services that heps you control the resources
+- Resouces are entities you create in AWS, S3 buckets objects
+- Users attempt to perform Action on resources s3:Create Bucket
+- Authorization to perform an Action depends on a policy
+
 
 Hands on:
 How to create IAM users.
