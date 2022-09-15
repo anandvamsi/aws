@@ -1,13 +1,45 @@
-Savings Plan
+##AWS savings plan
 
+-Discouned pricing on EC2,EKS, and Fargate
+- can run concurrently with Reserved instnaces.
+-There are two types of savings plan
+  - EC2 savings plan
+  - compute savings plan 
+
+
+
+EC2 savings plan::- least flexible with high discounnt 
+---------------------
+we are bound to instance family and region 
+Upto 72% discount 
+Applies to EC2,EKS and ECS
+Any size(large,xlarge,) any OS and any tenancy
+fargate is not supported in this saving plan
+
+Compute savings plan:: More flexible and less discount 
+-----------------------
+upto 66% discount 
+No need to choose the instance family ,size or region requirement 
+Any size any OS and any tenancy
+Applied to EC2, EKS, ECS
+
+Both savings plan are not commited to instances sizes,os and tenancy
+
+
+
+
+
+
+usecase::
 - Telling Amazon we are committing to use your compute for X amount per hour
 for 1-3 years term. Under a plan then you continue to use resources as per the discounted
 pricing, till you exhaust the X amount in an hour.
-if you use more than X mount, you are charged On demand rates.
+if you use more than X amount, you are charged On demand rates.
 
 - Savings plans only helps with discounts and not capacity Reservation.
 
 Go for "On Demand Capacity Reservation" if you want capacity Guarntee.
+
 
 
 
