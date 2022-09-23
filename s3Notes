@@ -121,9 +121,13 @@ s3 can host static websites and have them accessible on www.
 The website URL will be:-
 <bucket-name>.s3-website-<region>.amazonaws.com
 
+step1: Enable s3 website
+Naviage to the bucket , click on permission and select enable for s3 static website
+
 Note:- we need public access else we will get 402 error.
 and allow public bucket policy.
 
+Under the bucket policy upload this policy
 
 {
   "Id": "Policy1626503741008",
