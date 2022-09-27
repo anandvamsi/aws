@@ -1,0 +1,52 @@
+WAF
+------------
+
+WebACLRules
+There are two different types of rules
+- Managed rules
+- custom rules
+
+Below are example of custom rules
+
+    Based on the GEO location  
+         more like restrict data other than this country
+
+    Based on the query string 
+         if there is any query string in the URL, we can block it
+         www.abc.cin?admin  :- where admin is the query string
+
+
+Below are examples of Managed ruled groups
+- 
+PHP application
+posix OS
+SQL database
+      url/products?category=course'+OR+1=1--'
+
+windows OS
+wordpress application
+Linux OS
+
+
+online CURL :- google it
+where we can mention from which country we can access the data.
+
+
+
+Creation of WAF
+- First select the region
+- select the  Resource type
+    - cloudfront
+    - regional resources :- ALB,API gateway, AWS app sync
+
+
+Custom response bodies
+------------------------
+we can write custom text that indicates/show whenever there is an error it notifies.
+instead of throwing 404 error
+
+
+Implemenation notes:-
+------------------------
+First implement WAF dev/stage level if its working good replicate the same in production
+Applicaton security should be involved while implementing WAF
