@@ -1,0 +1,21 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DenyMarketplaceAMIAccess",
+      "Effect": "Deny",
+      "Action": [
+        "ec2:RunScheduledInstances",
+        "ec2:RunInstances"
+      ],
+      "Resource": "arn:aws:ec2:*::image/ami-*",
+      "Condition": {
+        "StringNotEquals": {
+          "ec2:Owner": [
+            "5072XXXXXXXX"
+          ]
+        }
+      }
+    }
+  ]
+}
