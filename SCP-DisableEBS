@@ -1,0 +1,16 @@
+{
+  "Effect": "Deny",
+  "Action": [
+        "ec2:DisableEbsEncryptionByDefault" 
+    ],
+  "Resource": [
+        "*" 
+    ],
+  "Condition": {
+        "ArnNotLike": {
+            "aws:PrincipalARN": [
+                "arn:aws:iam::*:role/[ALLOWED_ROLE_NAME]"
+            ]
+        }
+    }
+}
