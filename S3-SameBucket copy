@@ -1,0 +1,9 @@
+There can be a situations where we need to copy data from bucket to bucket in the same account
+it can for analysis purpose where there can be deletion of objects.
+
+In Order to copy data from one bucjet to another bucket.
+- First select the bucket(Bucket A-AKA source bucket ) go to the "Management"
+- Under the Management, go to section Replication rules
+- "Create a new replicatin rule" Mentioning the Source bucket, destination bucket and the report in which it needs to stored.
+- This will create a Batch Job which will show the status of the S3 bucket copy status.
+- Ideal state is completed.
