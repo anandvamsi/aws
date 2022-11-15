@@ -2,6 +2,7 @@ EC2 Notes
 -------------
 EC2
    - EC2 basics and understanding the console
+   - EC2 Tenancy attributes
    - EC2 instance types
    - Instance family
    - Creating Instance,Security group.
@@ -27,6 +28,18 @@ EC2
  - Install Cloudwatch Agent
 
 keywords :- cpu credits, 
+
+
+EC2 Tenancy Attributes
+----------------------
+Shared :- The EC2 instance runs on shared hardware even with other customers.
+
+Dedicated:- EC2 instance runs on hardware which will only be shared b/w same account AWS instnaces.
+
+Dedicated host is a physical server that allows us to use user our existing per-socket,per-core or even per VM based software licences which inclues
+Windows server, SUSE and various others.
+with Dedicated Hosts, we can user the same physical server over the time, even if the instances is stopped and started
+
 
 EC2 Instances types and Instance Family
 ############################################
