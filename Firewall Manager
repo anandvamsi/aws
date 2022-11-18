@@ -1,0 +1,18 @@
+Firewall manager 
+--
+AWS firewall maanager is a security managment service which allows you to centrally configure anad manage firewall rules across
+your accounts and applications in AWS organization 
+Firewall Manager supports
+----------------------------
+- AWS WAF
+- VPC security groups
+- AWS Network firewall
+- Route53 DNS firewall
+- AWS shield Advance
+- Palo Alto  next gen firewall
+
+
+simplify management of firewall rules across accounts
+Ensure compliance of existing and new applications
+Easily deploy managed rules across accounts
+centrol deploy protections for you VPCs
