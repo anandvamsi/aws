@@ -1,0 +1,31 @@
+Network Firewall.
+Network firwall is to monitor and protect your amazon VPC traffic in a number of ways
+- Pass traffic throuh only from know AWS service domains
+- use custom list of bad domains to limit the types of domains names that your application can access
+- perform deep packet inspection on traffic entering/leaving VPC
+
+
+- Domain filtering 
+- IP filtering 
+
+In the Domain filtering ,we can block based on the hostnames(facebook.com,twitter.com) works at the VPC level works in HTTP,HTTPS
+But ping will work.
+
+Ip filter-stateless
+we can drop the connections to specific port.
+
+step 1:
+For the N/W firewall
+- Create a VPC with subnets as public , one subnet for 
+
+step2:
+- Create a new firewall with setting of VPC created in the step1
+
+There are 3 resources types that Network firewall Manages
+Rule Group
+        Defines a set up rule to match against VPC traffic and actions to take when n/w firewall matches
+
+Firewall Policy
+    Allow adding multiple rules groups and configure other settings
+
+Firewall :- Provides traffic filtering logic for the subnets in a VPC
