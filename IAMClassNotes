@@ -15,6 +15,7 @@ How to Assign IAM users to groups.
 AWS credentials and use cases
 Enadbling MFA.
 Policy and creating policy 
+IAM deny policy logic
 IAM Roles
 IAM Best Practices
 
@@ -124,6 +125,17 @@ Effect – whether the policy allows or denies access
 Action – the list of actions that are allowed or denied by the policy
 Resource – the list of resources on which the actions can occur
 Condition (Optional) – the circumstances under which the policy grants permission
+
+IAM policy deny logic
+if i have policy for deny as well as for allow for the smae resource , deny is having the precedence ::it will be a deny
+Imagine a case where you want access to all the 4 buckets and expect1
+    - provide allow all policy 
+    - Deny the policy for te specific bucket 
+    
+
+Deny by default::- A request will be denied by default  if there is no allow policy present for the sreouces
+Explict Deny::- A request will be dined irrespecive of full access if it explicitly denied in the policy
+
 
 
 
