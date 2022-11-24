@@ -1,8 +1,6 @@
 IAM role:-
 IAM role is an entity that contains set of policies and many resources assumin the role will be able to have permission mentioned in the role
 Setting up of IAM role to ec2 instance is better and secure than setting up AWS creds.
-
-
 Attaching Role is one of the secure method to interact with AWS resources.
 
 ###Tip to Expose the secret key and Access Key.
