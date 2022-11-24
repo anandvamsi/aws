@@ -1,0 +1,7 @@
+Bydefault any user in the system should be able use the meta-data URL; inorder to restrict this we can use iptables to black-list the system users.
+>> Execute the below command as the root user
+iptables --append OUTPUT --proto tcp --destination 169.254.169.254 --match owner ! --uid-owner root --jump REJECT
+
+Now execute the curl command as the ec2-user
+[ec2-user@ip-10-8XXXX ~]$ curl 169.254.169.254/latest/meta-data/iam/info
+curl: (7) Failed to connect to 169.254.169.254 port 80: Connection refused
