@@ -65,7 +65,18 @@ Resources:
   
  Demo usecase: setting up user to start/stop of specific ec2 instance
 
-
+There are two supported version element values
+version : 
+  2012-10-17 
+              Current version of the policy element
+              it is recommended to always define version element to 2012-10-17
+              why this version :: there are certain aspects which supports in this version not in earlier version 
+                   more like policy variables ${aws:username}
+                   
+2008-10-17
+        Earlier version of the policy element
+        Avoid defining this version i any new policies
+        if you do include "Version Element", it default to this
 
 
 ##IAM Readonly#####################
