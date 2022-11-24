@@ -1,3 +1,61 @@
+Syntax
+---------
+
+Effect: it can be allow or deny policy
+  Allowed values: Allow, Deny   
+
+Actions: what actions has allowed or denied
+    example:
+        ec2:CreateKeyPair
+        ec2:CreateVPC
+        
+        SQS: List Queues
+        SQS: SendMessages
+        
+        S3: CreateBucket
+        S3: DeleteBucket
+
+Resources:
+     Resources element defines the object that statement covers
+     ARN uniquely identified the AWS resources
+     
+     Allowed values * or ARN
+     
+     
+  Syntax1:
+           {
+            "Statement": 
+              {
+                "Effect": "Allow",
+                 "Action": "ec2:Describe"
+                 "Resource": "*"                  
+            
+                }
+            }   
+  
+  Syntax2:
+      {
+            "Statement": [
+              {
+                "Effect": "Allow",
+                 "Action": "ec2:Describe"
+                 "Resource": "*"                  
+            
+                },
+                {                  {
+                "Effect": "Allow",
+                 "Action": "S3:PutObjects"
+                 "Resource": "*"                  
+            
+                }
+                ]
+            }   
+    
+  
+ Demo usecase: setting up user to start/stop of specific ec2 instance
+
+
+
 
 ##IAM Readonly#####################
 
