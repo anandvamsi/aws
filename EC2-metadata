@@ -1,0 +1,4 @@
+Instance metadata is basically data about your instance
+This data can be accessed within the instance itself.
+using the URL 169.254.169.254
+
