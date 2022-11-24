@@ -1,0 +1,26 @@
+What is meant by IAM crossAccount
+How to setup setup cross Account roles
+
+IAM Cross Account.
+where all the users are allow to login to one account and they can swith to another Account without creating same user in the child Account
+Consider the following scenarios:
+IAM-Account : Master Account
+Project1 Account ::- Child_Account1
+Projectc2 Accunt :: - Child_Account2
+
+
+step1:
+  Create a user Raj in the Master Account 
+step2:
+   Create a role in the Child_Account1 trusting the Master Account :ie mention the account number
+   Add necassary policy required to perform in the child Account and attach to the role created   
+
+step3:
+     Go to Master Account 
+     Create policy with sts assume role having the resource ARN of role created in the step2
+     Note:- User are not allowed do any thing in the identy account , but just to switch from one 
+     Account to another
+ 
+For the switch link:
+      Go to the child_Account get the ARN of the role
+      Go to the Master Account and naviaget it
