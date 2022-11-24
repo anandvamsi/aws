@@ -2,3 +2,5 @@ Instance metadata is basically data about your instance
 This data can be accessed within the instance itself.
 using the URL 169.254.169.254
 
+Bydefault any user in the system should be able use the meta-data URL; inorder to restrict this we can use iptables to black-list the system users.
+iptables --append OUTPUT --proto tcp --destination 169.254.169.254 --match owner ! --uid-owner root --jump REJECT
