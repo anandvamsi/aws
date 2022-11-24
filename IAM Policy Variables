@@ -1,0 +1,23 @@
+Policy variables are used when you dont exact values of a resource or condition key when you write the policy.
+
+Example:
+arn:aws:iam::<accid>:user/${aws:username}
+  - we can use this the policy (irrespecive of the user)
+  
+ Note: Policy variables are not suppored in the version 2008 
+ 
+ Example policy::
+ {
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": [
+                "iam:*AccessKey*"
+            ],
+            "Effect": "Allow",
+            "Resource": [
+                "arn:aws:iam::888913816489:user/${aws:username}"
+            ]
+        }
+    ]
+}
