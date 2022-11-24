@@ -33,6 +33,17 @@ Resources:
                 }
             }   
   
+  syntax 1.a
+   {
+            "Statement": 
+              {
+                "Effect": "Allow",
+                 "Action": [ "ec2:Describe" ]
+                 "Resource": [ "ARN1" ]                  
+            
+                }
+            }  
+  
   Syntax2:
       {
             "Statement": [
