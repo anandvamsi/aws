@@ -20,6 +20,15 @@ step3:
      Create policy with sts assume role having the resource ARN of role created in the step2
      Note:- User are not allowed do any thing in the identy account , but just to switch from one 
      Account to another
+     
+     {
+  "Version": "2012-10-17",
+  "Statement": {
+    "Effect": "Allow",
+    "Action": "sts:AssumeRole",
+    "Resource": "arn:aws:iam::PRODUCTION-ACCOUNT-ID:role/UpdateApp" ::- get it from child Account
+  }
+}
  
 For the switch link:
       Go to the child_Account get the ARN of the role
