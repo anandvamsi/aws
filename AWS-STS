@@ -1,0 +1,5 @@
+AWS STS is a web service that enables you to request temp limited privilage credentials for AWS IAM users or for users that you 
+authenticate
+
+Temporary security credentials are short term and expire adter certain duration.
+Since they have a limited lifetime, the key rotation is no longer explicity needed 
