@@ -1,0 +1,32 @@
+AWS single Sign On(SSO) makes it easy to centrally manage access to multiple AWS Accounts and business applications and provide user with single sign-on acess to all 
+their assigned accounts and applicatons from one place.
+
+AWS CLI integrates with the SSO
+
+SSO users can authenticate via CLI and they will be able to perofmr the CLI operations without having to add keys in their profile ~/.aws/credentials file
+
+step1: setup the profile
+cat ~/.aws/config should have following contents
+[profile production-Account]
+sso_start_url = "<URL>"
+sso_region = 
+sso_account = 
+ssol_role_name = PowerUserAccess
+
+step2: 
+aws sso login --profile <Profilename>
+-- will get URL + verificaton code 
+
+
+#Setting up of SSO with UI
+aws SSO has to be enabled at the organization level, where we can map uesrs to the Accounts.
+users can be created at the SSO or from other sources like AD(Microsoft Active Directory)
+After mapping users, we need to create a Group(with requred policy) and assigne the group to user.
+
+#Setting up AWS CLI with SSO
+#aws confiure sso 
+> This will ask for the URL
+> region
+
+
+
