@@ -50,3 +50,13 @@ Implemenation notes:-
 ------------------------
 First implement WAF dev/stage level if its working good replicate the same in production
 Applicaton security should be involved while implementing WAF
+
+
+
+Few of WAF rules are movied
+core rules set
+SQL database
+Amazon IP reputations 
+Windows OS
+F5 API security 
+DDos Attach IP reputation  list
