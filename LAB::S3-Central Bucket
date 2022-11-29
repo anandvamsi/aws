@@ -1,0 +1,46 @@
+consider a case you will have S3 central back, data from all the ec2s in other account will ingest the data in central S3 bucket.
+
+Account A:- Central account
+Create a s3 bucket and attach below policy 
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "arn:aws:iam::ACCOUNT-B-NUMBER:root"
+            },
+            "Action": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "s3:PutObjectAcl"
+            ],
+            "Resource": [
+                "arn:aws:s3:::mykplabs-central/*"
+            ]
+        }
+     ]
+  }   
+        
+        
+step2 :- In Account B Create a ec2 role with below policy
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "s3:PutObjectAcl"
+            ],
+            "Resource": "arn:aws:s3:::<bucket Account A>/*"
+ 
+        }
+    ]
+}
+
+Attach this role to ec2 use aws cli command to upload and download a file 
+
+
+    
