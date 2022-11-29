@@ -81,6 +81,65 @@ SSE-KMS leverage AWS key Management services to manage encryption keys
 SSE-C when you want to manage your own keys
 client side Encryptions
 
+Wider Scope of S3 bucket
+-----------------------
+Files within the s3 bucet can have scope beyound the IAM entity
+Organization can host entire websites in s3 bucket
+S3 buckets can even be used to host central files for download 
+
+
+Need of Resource based access
+----------------------
+- Allow Access from Internet 
+- Allow Acces from only specific IP address
+- Only Allow access from spedifc VPC
+- Only allow HTTPs connections 
+
+>> Policy for making s3 public 
+{
+  "Version":"2012-10-17",
+  "Statement":[
+    {
+      "Sid":"PublicRead",
+      "Effect":"Allow",
+      "Principal": "*",
+      "Action":["s3:GetObject"],
+      "Resource":["arn:aws:s3:::demo-bucket/*"]
+    }
+  ]
+}
+<<<
+
+>> Policy for requesting s3 bucket accessible only via HTTPS
+{
+  "Id": "ExamplePolicy",
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowSSLRequests",
+      "Action": "s3:GetObject",
+      "Effect": "Allow",
+      "Resource": [
+        "arn:aws:s3:::mykplabs-policy/*"
+      ],
+      "Condition": {
+        "Bool": {
+          "aws:SecureTransport": "true"
+        }
+      },
+      "Principal": "*"
+    }
+  ]
+}
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+
+
+
+
+
+
 
 SSE-s3
 Encryption using keys handled anad manged by amazon s3
