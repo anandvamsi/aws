@@ -1,0 +1,29 @@
+Federation
+---------
+Federation allows external identies to have secure acces in your AWS account without having to create any IAM users.
+
+These external identies can come from
+- corperate identity provider(AD,IPA)
+- Web Identity provider(Facebook,Google,Amazon)
+
+
+Two important components
+-------------------------
+- Identity provider::- okta 
+- service provider :: jenkins,aws,HR
+
+All the uesrs are stored  in the identify provider 
+step 1: User first authenticates to the indetity provider 
+step 2: The credentials are given to the identity broker
+step 3: Identity Broker validates it against the AD
+step 4: If credentails are valid, Broker will contact the STS token service.
+STS will share the following 4 things.
+Access Key + Secret Key + Token + Duration
+user can now use to login AWS console or CLI
+
+Identies:: users
+Identity Providers:
+It is a middleware that takes the user from point A and help connect them to point B
+
+Identity Store:-
+Place where users present, AD,IPA,FB
