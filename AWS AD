@@ -1,0 +1,17 @@
+Directory service with Microsoft AD.
+
+AWS Directory for Microsoft active directory is powered by an actual Windows server Active directory
+
+There are two types 
+standard edition :- upto 5000 users
+Entrprise edition :- For large deployments
+
+AD connector
+It a proxy service , that provides easy way to connect  applications in cloud to your existing application on-premised AD 
+when user logs in to the application, AD connector forwards sign-in requests to your on-premise AD domain controller for authentication
+
+
+Simple AD
+simple AD is a Microsoft Active Directory comptaible directory from AWS direcory service that is powered by Samba4.
+simple AD supports basic Active directory features such as user accounts,memberships, joning Linux domains 
+Simple AD does not supports trust relationship, DNS dynamic update, schema extentionsm,MFA 
