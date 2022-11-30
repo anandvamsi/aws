@@ -1,0 +1,11 @@
+
+All the objects in s3 are 'private' by default
+
+However objects owner can optionally share objects with others by creating a presgined URL to grant time-limited permission to download the 
+object
+
+Keeping the bucket private if the any of the user want to download a single object for spefic time we need to create a presign URL
+command to create a presign URL
+aws s3 presign s3://config-XXXXX-itops/file2 --expires-in 60
+
+This will provide a presign URL where user can use in the browser for period of 60 seconds.
