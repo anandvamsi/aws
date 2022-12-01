@@ -1,0 +1,9 @@
+Without versioning
+- when some uploads a new file with same name as existing it will overwrites
+- Accidental deletion of the objects
+
+Feature of versioing 
+-------------------
+Versioning allows users to keep multiple variants of an object in the same s3 bucket.
+You can versioning to preserve,retrive and restore every versio of every object stored in the s3 bucket.
+
