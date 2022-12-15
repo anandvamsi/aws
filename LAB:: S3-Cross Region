@@ -1,0 +1,10 @@
+Many compliace has a requirement that that data must be replicated across greater distance
+Cross Region replication allows data from s3 buckets to be replicated across the regions.
+
+Important Pointer
+Both the source and destination buckets must have the version enabled.
+
+Create a replication rule in the source bucket.
+- Mention the IAM role-name  and Region 
+
+After uploading a object, it will take some time to get the object replicated in the destination region
