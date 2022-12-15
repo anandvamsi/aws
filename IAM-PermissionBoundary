@@ -1,0 +1,15 @@
+A permission Boundry is an advanced feature in which you use a managened policy to set the maximum permisson that can identify-based policy can grant to an IAM
+entity
+
+A permissin boundry just give the boundry does not provides the access.
+
+- create a IAM user, set the permission boundary for an example :: S3 full access.
+- Now add a inline policy Admin access to the same IAM 
+- Create IAM Keys
+
+Using the AWS-CLI now try to describe the ec2 instances , you wont be able to describe since the permission Boundary is set
+Note: if you disable the boundary you will be able to list the ec2 instances.
+
+Notes:-
+Final effective policy of a resources is  policy respectitve to SCP,Identity-based and permission boundary
+if any of the policy is deny ,its denied.
