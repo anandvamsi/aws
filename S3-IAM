@@ -1,0 +1,26 @@
+ {
+ "Version": "2012-10-17",
+  "Statement":
+    {
+      "Effect": "Allow",
+      "Action": ["s3:*"],
+      "Resource": ["arn:aws:s3:::mykplabs-singapore"]
+    }
+}
+Policy 2
+
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": ["s3:*"],
+      "Resource": ["arn:aws:s3:::mykplabs-singapore"]
+    },
+    {
+      "Effect": "Allow",
+      "Action": ["s3:*"],
+      "Resource": ["arn:aws:s3:::mykplabs-singapore/*"]
+    }
+  ]
+}
