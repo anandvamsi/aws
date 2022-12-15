@@ -1,0 +1,15 @@
+S3 Object Lock
+----------------
+With S3 Object Lock you can store Objects using write once read many (WORM) Model.
+you can use it to prevent an object from being deleted or overwritten for a fixed amount of time or indefinitly 
+
+Example :: Ransomware Attack.
+where Attacker can encrypt the data and users cannot decrypt the data, In order to encrypt the data  they need help of attacker's decryption 
+
+Object lock only works with bucket versionng 
+
+RetionModes::-
+There are 2 modes:
+1. Goverance Mode :- When deployed in Goverance mode, AWS accounts with specific IAM permission are able to remove object lock from objects
+2. Compaliance Mode:- Protection cannot be removed by any user, including root user.
+
