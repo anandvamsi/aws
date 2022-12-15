@@ -56,6 +56,8 @@ How to open object in the s3 bucket=
 
 Versioning 
 --------------
+- Versioning allow users to keep multiple variant of an object in the same s3 bucket.
+- You can versioning to preserve,retrive and restore every sesion of every object in your amazon s3 bucket.
 
 you can version your file in Amazon s3
 it is enabled at bucket level
