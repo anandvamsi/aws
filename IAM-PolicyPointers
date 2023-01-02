@@ -1,0 +1,12 @@
+Pointers with Policies
+
+1. we can have only one statement in a policy 
+   statement [{Effect,Action,Resource section1}, {Effect,Action,Resouce section2}]
+
+2. Whenever we use the policy variables like {aws.username}, Make sure to use version in the policy
+like 
+"Version": "2012-10-17" 
+Because apply this version activates all the variables 
+
+3. Whenever mentioning the Multiple Resources , make user to mention in array 
+Resource["R1","R2"]
