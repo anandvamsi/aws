@@ -1,0 +1,19 @@
+1. Create a public certificate in the ACM
+      while creating a public cert validation this will ask 2 kinds of validation  either email or DNS validation
+      choose either of the one.
+     
+     
+2. Successful creation of certificate provides two values 
+   CNAME name and CNAME value
+   we need the two params for the DNS validation
+   
+   
+3. Goto the pulic DNS hosted Zone
+   Create a CNAME record with with above CNAME name and CNAME value captured in the step2
+   
+4. wait for ~30mins, check the validation status aginst the pubic cert created in the ACM should turned to the "validate" state 
+
+
+There is an OPENSSL command to check the certificate 
+#openssl s_client -showcerts -connect XXXXXXXXXX.ntara-uat.com:443
+Note::- Make sure the Verify return code is 0(ok) ::- state.
