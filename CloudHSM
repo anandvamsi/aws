@@ -1,0 +1,14 @@
+Special security Device - HSM 
+
+Cloud HSM 
+Cloud based hardware security module(HSM)
+With Cloud HSM , you can manage your own encryption keys using FIPS 140-2 Level 3 validated HSMs
+Prior to this,Company has to store HSM device in the on-premise and if the infrastrucutre was on AWS, there were a lot of latency involved 
+
+Pointes with HSM
+Cloud HSM runs on with in the VPC, enabling you to easily use your HSM with applications runnin on your Amazon EC2 instnaces
+AWS does not involve the creation and managment of the key material strored within your HSM.
+Cloud HSM can be clusted inoder for the high availability 
+Cloud HSM is single Tenantend(single physical device/customer)
+we can intergrate CLoud HSM with Redshift and RDS for oracle.
+They are FIPS validated 
