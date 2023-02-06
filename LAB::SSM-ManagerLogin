@@ -1,0 +1,23 @@
+How to login to Manager ec2 awscli not via AWS ssm connect.
+
+Execute the below commands in an SSM managed EC2.
+
+step1: Install AWS CLI
+step2: Download  ssm-manager plugin
+curl "https://s3.amazonaws.com/session-manager-downloads/plugin/latest/linux_64bit/session-manager-plugin.rpm" -o "session-manager-plugin.rpm"
+
+step3: Install the plugin
+sudo yum install session-manager-plugin.rpm
+
+step4: Verify if the plugin is successfully installed
+session-manager-plugin
+The Session Manager plugin was installed successfully. Use the AWS CLI to start a session
+
+step5: Start the session using below command
+aws ssm start-session --target "i-0bd5e0XXXXXXXX" --region us-west-2
+
+Starting session with SessionId: i-0b03aXXXXXX-093db258XXXXX
+sh-4.2$
+
+
+Notes:- Instance i-0bd5e0XXXXXXXX should be SSM managed .
