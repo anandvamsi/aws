@@ -1,0 +1,21 @@
+
+
+Implement a vault lock policy that no one will delete the vault data even the admin
+
+step1:- Create a s3-glacier vault
+step2: Create Vault Lock policy
+
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "deny-based-on-archive-age",
+            "Effect": "Deny",
+            "Principal": "*",
+            "Action": "glacier:DeleteArchive",
+            "Resource": "arn:aws:glacier:us-west-2:2X008XXXX:vaults/Demo-Glacier"
+        }
+    ]
+}
+
+This will provide a vault ID. which is used to reflect the changes quickly 
