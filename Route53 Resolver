@@ -1,0 +1,7 @@
+An Amazon VPC conects to Route53 Resolver at a VPC+2 IP address
+For example if the VPC is 172.31.0.0/16 then then Route53 reslover will be 172.31.0.2
+
+A Route53 Resolver automatically answers DNS queries For:-
+- Local VPC domain names for EC2
+- Records in private hosted zones(acme.example.com)
+- For public domains Route53 resolvers persofms recursive lookups against public names servers on the internet.
