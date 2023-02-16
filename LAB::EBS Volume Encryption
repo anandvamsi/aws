@@ -1,5 +1,12 @@
+
+#compliance How to Enable Encyrption by default.
 Note:- By default EBS volume is not encrypted, to set it as the default option.
 In the EC2 console, there is an account attributes select the EBS volume (Note: These attributes are at the regional level.)
 - Mention the KMS key to encrypt
 
 After enabling the Key, when EBS volumne is created it will encryted by default.
+
+
+#How to Create a encrypt volume from unencrypted volume.
+- Create a SNAPSHOT from the unecrypted volume.
+- Create a new volume with encyrption enabled from snapshot created in the first step
