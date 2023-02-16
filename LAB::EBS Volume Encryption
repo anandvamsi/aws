@@ -7,6 +7,16 @@ In the EC2 console, there is an account attributes select the EBS volume (Note: 
 After enabling the Key, when EBS volumne is created it will encryted by default.
 
 
+
 #How to Create a encrypt volume from unencrypted volume.
 - Create a SNAPSHOT from the unecrypted volume.
 - Create a new volume with encyrption enabled from snapshot created in the first step
+
+#How to Create a encrypted SNAPSHOT from unencrypted SNAPSHOT
+- select the un-ecnrypted snapshot
+- Action-->COPY SNAPSHOT--> mention the region and check in the "Encryption"
+
+
+#How to Re-encyrpt volume from enrypted snapshop
+- While creating a volume from a snapshot, there is option select the encryption key
+- Note we cannot disable the encrypted snapshot
