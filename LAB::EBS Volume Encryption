@@ -1,0 +1,5 @@
+Note:- By default EBS volume is not encrypted, to set it as the default option.
+In the EC2 console, there is an account attributes select the EBS volume
+- Mention the KMS key to encrypt
+
+After enabling the Key, when EBS volumne is created it will encryted by default.
