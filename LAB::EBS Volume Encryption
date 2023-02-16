@@ -20,3 +20,5 @@ After enabling the Key, when EBS volumne is created it will encryted by default.
 #How to Re-encyrpt volume from enrypted snapshop
 - While creating a volume from a snapshot, there is option select the encryption key
 - Note we cannot disable the encrypted snapshot
+
+Note::- All these encrypted snapshot sharing is only possible within the Accounts.
