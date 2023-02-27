@@ -1,0 +1,9 @@
+How to clone to code commit repo
+
+if you are having okta as ths SSO use gimmecreds or awscredentails
+step1:- configure in the ~/.aws/config with access key and secret key
+
+step2:- Configure git helper in the present working directoru
+[credential]
+UseHttpPath = true
+helper = !aws --profile <Profilename mentioned in ~/.aws/credentials>  codecommit credential-helper $@
