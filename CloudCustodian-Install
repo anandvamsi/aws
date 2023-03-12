@@ -1,0 +1,27 @@
+
+##For AWS
+python3 -m venv custodian
+source custodian/bin/activate
+pip install c7n       # This includes AWS support
+
+#To validate the installation
+custodian version
+0.9.23
+
+
+#First custodian test program
+Pre-setps ::- Create a RO role and attache to ec2 instance
+set region to required region 
+
+- Create a file custodian.yml
+policies:
+  - name: my-first-policy
+    resource: aws.ec2
+    
+custodian validate custodian.yaml
+2023-03-12 17:32:24,693: custodian.commands:INFO Configuration valid: custodian.yaml
+
+custodian run --dryrun -s out custodian.yaml
+> This will create a out directory with output in json format and log file
+    
+ 
