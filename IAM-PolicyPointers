@@ -10,3 +10,22 @@ Because apply this version activates all the variables
 
 3. Whenever mentioning the Multiple Resources , make user to mention in array 
 Resource["R1","R2"]
+
+Policy Terminology
+-------------------
+Principal – A person or application that can make a request for an action or operation on an AWS resource. Role sessions, IAM users, federated users, and root users are principals that make requests.
+
+Identity-based policies – Policies that are attached to an IAM user, group, or role. These policies let you specify what that identity can do (its permissions). Identity-based policies can be managed or inline .
+
+Resource-based policies – Policies that are attached to a resource. For a list of services that support resource-based policies, see AWS services that work with IAM .
+
+Explicit deny – The result of an AWS request where a statement with an Effect of Deny matches the request. An explicit deny overrides any other policy evaluation decision.
+
+Implicit deny – The result of an AWS request where no statement with either an Effect of Allow or Deny matches the request. All IAM policy evaluation decisions start with an implicit deny until either an Allow or Deny statement is found that matches the request.
+
+Explicit allow – The result of an AWS request where a statement with Effect of Allow matches the request and no statement with an Effect of Deny matches the request.
+
+Implicit allow – This result is not possible. Access to an AWS resource must be explicitly allowed.
+
+Role session – IAM roles help you grant access to AWS services and resources by using dynamically generated short-term credentials. Each instantiation of an IAM role with the associated set of short-term credentials is known as an IAM role session.
+
