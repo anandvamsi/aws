@@ -1,0 +1,22 @@
+#Denies creating a EBS volume of GP2 type
+
+
+
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Stmt1682502598860",
+      "Action": [
+        "ec2:CreateVolume"
+      ],
+      "Effect": "Deny",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "ec2:VolumeType": "gp2"
+        }
+      }
+    }
+  ]
+}
