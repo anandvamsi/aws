@@ -1,0 +1,29 @@
+If you want execute the script at every reboot of the ec2
+- usecases custom daemon scripts
+Mention below code in user-data in the AWS console
+>>>>>>
+Content-Type: multipart/mixed; boundary="//"
+MIME-Version: 1.0
+
+--//
+Content-Type: text/cloud-config; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: attachment; filename="cloud-config.txt"
+
+#cloud-config
+cloud_final_modules:
+- [scripts-user, always]
+
+--//
+Content-Type: text/x-shellscript; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: attachment; filename="userdata.txt"
+
+#!/bin/bash
+su - ec2-user -c "/usr/local/bin/steampipe service start"------- Insert the code here
+sleep 10
+--//
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
