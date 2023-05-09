@@ -1,0 +1,15 @@
+Method 2
+Apart from pulling/pushing the code using https, there is another method we can push the code to code commit.
+
+step1:- Create ssh key pair using ssh-kegen
+ssh-keygen
+
+step2:- Create a IAM user and navigate to IAM navigate to "security-credentails"
+and upload the upload key in SSH public keys for AWS CodeCommit
+
+step3:- Configure ~/.ssh/config in the developer Node.
+Host git-codecommit.*.amazonaws.com
+User APKA27BCXXXXXXXX---- replace the ssh-key id here
+IdentityFile ~/.ssh/id_rsa
+
+step4:- try git clone and push 
