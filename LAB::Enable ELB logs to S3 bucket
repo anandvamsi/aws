@@ -1,0 +1,47 @@
+
+step1: Create a s3 bucket with below attached policy
+>>>>
+{
+	"Version": "2012-10-17",
+	"Id": "AWSConsole-AccessLogs-Policy-1671199150707",
+	"Statement": [
+		{
+			"Sid": "AWSConsoleStmt-1671199150708",
+			"Effect": "Allow",
+			"Principal": {
+				"AWS": "arn:aws:iam::797873946194:root"
+			},
+			"Action": "s3:PutObject",
+			"Resource": "arn:aws:s3:::eai2-uat-nlb2-uat/AWSLogs/<Account no>/*"
+		},
+		{
+			"Sid": "AWSLogDeliveryWrite",
+			"Effect": "Allow",
+			"Principal": {
+				"Service": "delivery.logs.amazonaws.com"
+			},
+			"Action": "s3:PutObject",
+			"Resource": "arn:aws:s3:::eai2-uat-nlb2-uat/AWSLogs/<Account no>/*",
+			"Condition": {
+				"StringEquals": {
+					"s3:x-amz-acl": "bucket-owner-full-control"
+				}
+			}
+		},
+		{
+			"Sid": "AWSLogDeliveryAclCheck",
+			"Effect": "Allow",
+			"Principal": {
+				"Service": "delivery.logs.amazonaws.com"
+			},
+			"Action": "s3:GetBucketAcl",
+			"Resource": "arn:aws:s3:::<S3 bucket name>"
+		}
+	]
+}
+<<<<<<<<<<<<< Replace with Account number and ARN >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+step2:
+Go to the ELB and Attributes mention the s3 bucket name.
+
