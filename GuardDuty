@@ -1,2 +1,16 @@
 Amazon GuardDuty can help to monitor and detect potential cybersecurity events by using threat intelligence feeds. These include lists of malicious IPs and machine learning to identify unexpected,
 unauthorized, and malicious activity within your AWS Cloud environment.
+
+
+Guard duty alerts levels and examples::
+LOW — EC2 instance i-99999999 has an unprotected port which is being probed by a known malicious host. 
+LOW — 77.22.11.22 (IP) is performing SSH brute force attacks against i-99999999.
+MEDIUM — Outbound portscan from EC2 instance i-99999999.
+MEDIUM — Unusual outbound communication seen from EC2 instance i-99999999 on server port 22.
+MEDIUM — EC2 instance involved in SSH brute force attacks.
+MEDIUM — Data exfiltration through DNS queries from EC2 instance i-99999999.
+MEDIUM — Unusually large amount of network traffic from EC2 instance i-99999999.
+MEDIUM — IAM User ‘ricardo.schmidt’ logged into the AWS Console from multiple countries simultaneously.
+MEDIUM — Tor Exit node is communicating with EC2 instance i-99999999.
+HIGH — EC2 instance i-99999999 communicating with known XorDDos Malware server.
+HIGH — Bitcoin-related domain queries from EC2 instance i-99999999.
