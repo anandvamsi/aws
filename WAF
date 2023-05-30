@@ -1,6 +1,18 @@
 WAF
 ------------
+AWS WAF s a web application  firewall.
+Lets monitor all the HTTP and HTTPs request that are forwarded to an API GW,Amazon Cloud front or an ALB
+if the request if aloed it provides access and respons with request content otherwise reponds with a 403 status code/
 
+3 Things make WAF work
+    - ACL
+    - Rules
+    - Rule groups
+
+WAF manages WEB ACL Units(WCU) for rules, rules groups and web ACLs
+The Max WCU for a webACL is 1500
+
+----------------------------------------------------------------
 WebACLRules
 There are two different types of rules
 - Managed rules
