@@ -1,0 +1,13 @@
+
+
+#How to Test lamda using command line
+aws lambda invoke --function-name <Name of the lamda function> --payload file://data.txt output.txt --region us-west-2
+{
+    "ExecutedVersion": "$LATEST",
+    "StatusCode": 200
+}
+$ cat data.txt
+{
+    "name": "Anand",
+    "Team": "Devops"
+}
