@@ -6,10 +6,11 @@ ssh-keygen
 
 step2:- Create a IAM user and navigate to IAM navigate to "security-credentails"
 and upload the upload key in SSH public keys for AWS CodeCommit
+Make sure this user have permission "AWSCodeCommitPowerUser"
 
 step3:- Configure ~/.ssh/config in the developer Node.
 Host git-codecommit.*.amazonaws.com
-User APKA27BCXXXXXXXX---- replace the ssh-key id here
+User APKA27BCXXXXXXXX---- replace the user=id here
 IdentityFile ~/.ssh/id_rsa
 
 step4:- try git clone and push 
