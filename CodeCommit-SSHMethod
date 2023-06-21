@@ -13,8 +13,12 @@ Host git-codecommit.*.amazonaws.com
 User APKA27BCXXXXXXXX---- replace the user=id here
 IdentityFile ~/.ssh/id_rsa
 
-git clone command
+step4:
+Get the SSH clone URL from the code repository
+
+For cloning the code.
+#clone
 git clone  ssh://git-codecommit.us-west-2.amazonaws.com/v1/repos/LXXXXing_framXXXework
 
-git push command
+#push 
 git push origin 
