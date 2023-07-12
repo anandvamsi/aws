@@ -1,0 +1,48 @@
+Assume there are two Accounts:-
+
+Account 1. 11111111 sourceB1
+Account 2. 22222222 DestinatioD1
+
+Prerequite make sure the buckets have versioning enabled.
+
+step1: Login to s3 console of Account1 and idenity the SourceB1
+step2: Click on the Management Console and select the "Create Replication Rule"
+step3: Mention all the details Destinatoion Account number + bucketname
+      step3a: Let AWS Create a new IAM role.
+step4: Click save this will enable the replication setup in the source Account
+      step4a:- copy the ARN of the role created in step3a
+step5: Login to the Destination Account and Navigate to Bucket "Destinaton01"
+step6: Navigate to permission Tabs Paste below policy 
+      step6a. Replace the ARN copied the step 4a + Destination bucket name
+>>>>>>
+{
+    "Version": "2012-10-17",
+    "Id": "",
+    "Statement": [
+        {
+            "Sid": "Set permissions for objects",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "<ARN of the source Account >"
+            },
+            "Action": [
+                "s3:ReplicateObject",
+                "s3:ReplicateDelete"
+            ],
+            "Resource": "arn:aws:s3:::<Destination bucket name>/*"
+        },
+        {
+            "Sid": "Set permissions on bucket",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "<ARN of the source Account>"
+            },
+            "Action": [
+                "s3:List*",
+                "s3:GetBucketVersioning",
+                "s3:PutBucketVersioning"
+            ],
+            "Resource": "arn:aws:s3:::<Destination bucket name>"
+        }
+    ]
+}
