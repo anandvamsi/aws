@@ -1,0 +1,42 @@
+
+#Polcies to add and remove users to the group Developers and Operators.
+
+
+{
+    “Version”: “2012–10–17”,    
+    “Statement”: {
+“Effect”: “Allow”,
+    “Action”: [
+        “iam:AddUserToGroup”,
+        “iam:RemoveUserFromGroup”,
+        “iam:GetGroup”
+        ],
+“Resource”: [
+        “arn:aws:iam::609103258633:group/Developers”,
+        “arn:aws:iam::609103258633:group/Operators”
+        ]
+    }
+}
+
+
+#polcies to access ec2 resources to specific region
+
+{
+“Version”: “2012–10–17”,
+“Statement”: [
+{
+        “Effect”: “Allow”,
+        “Action”: [
+        “ec2:*”
+        ],
+“Resource”: “*”,
+    “Condition”: {
+        “StringEquals”: {
+    “aws:RequestedRegion”: “ap-south-1”
+    }
+    }
+    }
+]
+}
+
+#Policy 
