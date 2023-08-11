@@ -32,6 +32,16 @@ Notes:-
 - whenever we create IP address in amazon 5 IP address are reserved for internal usage.
    - First 4 and last 1 Ip address 
 
+MainSubnet::-
+10.0.0.0/16 ::- VPC CIDR
+subnet1:- 10.0.1.0/24
+subnet2:- 10.0.2.0/24
+subnet3:- 10.0.3.0/24
+
+Refer Subnet calculator ::- Maxtoolbox.com
+
+
+
 
 subnets
 -----------
