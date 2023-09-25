@@ -95,9 +95,75 @@
 - S3 website
 - S3 Cross Account replication
 - Presign URL creation with UI and CLI
+- S3 bucket  notification
 
 ## EFS
 - what is EFS and advantages
 - EFS creation and types
 - Mouting EFS to EC2
+
+## CLoudwatch
+- Need for monitoring
+- what is Cloudwatch
+- CLoudwatch resources and metrics
+- Cloudwatch alarm creation
+- CLoudwatch agent installation
+- Pushing logs to cloudwatch logs
+- CLoud log insights
+- Cloudwatch dashboard.
+
+## CloudTrail
+- What is CLoudtrail and usecases
+- Creation of cloudtrail and integration with CW logs
+- QUerying the Cloudtrail using log sights
+
+## SNS
+- SNS topic creation
+- mail Subscription
+
+## AWS Events
+- What is AWS events
+- Configure AWS event {scheduled and triggers}
+- Integration with SNS topic
+
+## RDS
+- what is RDS and need
+- RDS instance and ypes
+- RDS creation and login
+- Creatin of Read repicat
+- RDS backups
+- Paramter group.
+
+## Systems Manager
+- what is system manager
+- Automation
+- Inventory
+- Managed and Unmanagge instances
+- compliance and Patch Management
+- Paramter store
+
+## AWS Secret Manager
+- what is vault and usecases
+- Storing and retriving vaules using UI and CLI
+
+## AWS config,Guardduty,Inspector
+- Need of AWS config,Guarduty
+- query with config query tool
+- Explaing Alerts of Guardduty
+- Inspector Agent Installation
+  
+
+## AWS billing and cost explorer
+- What is AWS billing
+- Explaing AWS billing components
+- Creating a adhoc billing template
+- Cost explorer
+
+#steampipe::- THirdparty tool
+
+#Cloudquery:: Thirdparty tool
+
+#Grafana Integration
+
+
 
