@@ -159,11 +159,21 @@
 - Creating a adhoc billing template
 - Cost explorer
 
-#steampipe::- THirdparty tool
+## steampipe::- THirdparty tool
+- Configure inventory
+- compliance
+- Thirfty
 
-#Cloudquery:: Thirdparty tool
-
+## Cloudquery:: Thirdparty tool
+- what is cloud query
+- Installing CQ
+- CQ source and destionation
+- CQ Sync
+  
 #Grafana Integration
+- what is Grafana
+- Grafana installation
+- Integration with Cloud query
 
 
 
