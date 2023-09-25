@@ -4,9 +4,9 @@
 - Linux Distributions
 - File systems
 - Ubuntu app/putty login
-- Linux commands with respecitve file,directories
-- Disk Paritioning
-- Process Managment
+- Linux commands with respective  file,directories
+- Disk Partitioning
+- Process Management
 - Package Management
 - User Management
 - Services Monitoring
@@ -14,25 +14,25 @@
 # AWS
 - Understanding AZs and Regions
 - AWS Shared Responsibility Model
-- Undestanding the terms Elasticity, AZ, Region, Health, High availability, Load Balancing, Fault Tolerence
+- Understanding the terms Elasticity, AZ, Region, Health, High availability, Load Balancing, Fault Tolerence
 
 ## IAM
 - Understanding IAM users
 - Activating MFA
 - Generate Access and Security Key pair
 - Keypair rotation policy
-- IAM user, Roles, policies and best practics
-- Policy creation methods 
+- IAM user, Roles, policies and best practices
+- Policy creation methods
 - Controlling access using policies
-  - Managed 
-  - Inline policies 
+- Managed
+- Inline policies
 - Understanding SCPs and live usecases
 - Cross Account Access
-- Understanding permission Boundry 
+- Understanding permission Boundary
 - AWS credential report generation
 - IAM roles Anywhere :- Theory and usecases
 - Industry Best practices for IAM
-- 
+-
 
 ## VPC
 - Basic Networking fundamentals
@@ -50,9 +50,9 @@
 
 ## Load Balancing
 - What is Load Balancing
-- Types of LoadBalancing
+- Types of Load Balancing
 - Classic Load Balancer
-- Appication Load Balancer
+- Application Load Balancer
 - Target Groups,LB Health
 - ALB usecases::- Path based routing
 
@@ -71,31 +71,31 @@
 - EBS volume attachment
 - Extending the root volume
 - userdata and ec2 resume during a key lost
-- EC2 Tagging and Best Strataggies
+- EC2 Tagging and Best Stratagies
 - AMI cross region
 - AWS CLI Installation and profile creation.
 - Role Attachment
 - AWS Resource metadata URL
 - Upgrading EC2 instance type
-- 
+-
 
 
 ## Auto Scaling
-- Understanding horizondal and vertical Scaling
+- Understanding horizontal and vertical Scaling
 - Auto scaling group
-- configration template
+- configuration template
 - simulation of AutoScaling
 
 ## AWS S3
 - what is object storage
 - S3 and usecases
 - S3 creation and object uploading with UI and CLI
-- S3 versioing
+- S3 versioning
 - S3 life cycle policy
 - S3 website
 - S3 Cross Account replication
 - Presign URL creation with UI and CLI
-- S3 bucket  notification
+- S3 bucket notification
 
 ## EFS
 - what is EFS and advantages
@@ -128,9 +128,9 @@
 
 ## RDS
 - what is RDS and need
-- RDS instance and ypes
+- RDS instance and types
 - RDS creation and login
-- Creatin of Read repicat
+- Creation of Read replica
 - RDS backups
 - Paramter group.
 
@@ -138,42 +138,39 @@
 - what is system manager
 - Automation
 - Inventory
-- Managed and Unmanagge instances
+- Managed and Unmanaged instances
 - compliance and Patch Management
-- Paramter store
+- Parameter store
 
 ## AWS Secret Manager
 - what is vault and usecases
-- Storing and retriving vaules using UI and CLI
+- Storing and retrieving values using UI and CLI
 
 ## AWS config,Guardduty,Inspector
 - Need of AWS config,Guarduty
 - query with config query tool
 - Explaing Alerts of Guardduty
 - Inspector Agent Installation
-  
+
 
 ## AWS billing and cost explorer
 - What is AWS billing
-- Explaing AWS billing components
+- Explain AWS billing components
 - Creating a adhoc billing template
 - Cost explorer
 
-## steampipe::- THirdparty tool
+## steampipe::- Third party tool
 - Configure inventory
 - compliance
 - Thirfty
 
-## Cloudquery:: Thirdparty tool
+## Cloudquery:: Third party tool
 - what is cloud query
 - Installing CQ
-- CQ source and destionation
+- CQ source and destination
 - CQ Sync
-  
+
 #Grafana Integration
 - what is Grafana
 - Grafana installation
 - Integration with Cloud query
-
-
-
