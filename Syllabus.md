@@ -77,7 +77,9 @@
 - Role Attachment
 - AWS Resource metadata URL
 - Upgrading EC2 instance type
--
+- EC2 Lost Key pair:- How to login
+  - Inject new key with user data
+  - Root volume method
 
 
 ## Auto Scaling
