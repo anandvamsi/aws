@@ -7,7 +7,7 @@
   - Managment Account
   - Member Account
 
-![AWS Account](org.jpg)
+![AWS Account](Org.jpg)
 
 ## Management Account 
   -  A management account/Master Account which is used to govern all the other accounts and consolidate billing and other services.
