@@ -13,8 +13,6 @@
   -  A management account/Master Account which is used to govern all the other accounts and consolidate billing and other services.
   -  The administrative root is the top-most container in your organization’s hierarchy.
   -  Under this root, you can create OUs to logically group your accounts and organize these OUs into a hierarchy that best matches your business needs.
-   file:///home/anand/Downloads/AWS/Org.jpg
-
 
     
 
