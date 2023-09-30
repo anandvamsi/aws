@@ -1,7 +1,0 @@
-
-#AWS Account Best Practices
-- A management account which is used to govern all the other accounts and consolidate billing and other services
-- A Production account for holding all their main production systems
-- A sandbox account where developers can play around and experiment with AWS services
-- A security account used for the cyber-security team with read only access to logs and other security services.
-- A shared services account which follows a hub-spoke model for services which are used across accounts e.g. storage of logs, networking etc.
