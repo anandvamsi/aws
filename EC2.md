@@ -73,6 +73,18 @@ keywords :- cpu credits,
 - ```Storage Optimized```
   Storage optimized instances are well-suited for tasks that demand extensive, sequential read and write access to ```large data sets stored locally```.
   By leveraging the high storage capacity and optimized storage performance of these instances, organizations can efficiently handle data-intensive workloads and achieve optimal performance for their storage-centric applications
+   ```H1 and D2 instances are part of the Dense storage offerings that provide high sequential read-writes for large data sets, such as in distributed Hadoop deployments```
+      with H1 providing a maximum of 16 TB and D2 providing a maximum of 48 TB.
+
+- ```Accelerated Computing```
+  Include additional hardware (GPUs, FPGAs) to provide massive amounts of parallel processing for tasks such as graphics processing.X1, X1e
+	P3: These are the general GPU offerings, good for machine learning and offering robust parallel processing abilities.
+	G3: These are the GPU offerings that are specialized for graphics-intensive tasks such as rendering, encoding, and streaming.
+	F1: These are instances that offer FPGAs for accelerated processing. You can leverage the FPGAs multiple ways over time for different enhancements, and all this is aided by custom 		FPGA-specific AMIs (called AFIs) that offer quicker deployment and development options compared to conventional FPGAs.
+   
+  
+    <img src="instancetypes.jpg" width="600">
+  
       
 ## EC2 instance states
   - Pending
@@ -99,6 +111,17 @@ keywords :- cpu credits,
       https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
       https://awscli.amazonaws.com/v2/documentation/api/latest/reference/index.html
      ```
+ ## Types of EC2 instances
+   - On demand :- Pay for what you use,No unfront fees,no commitments
+   - Reserved instances
+        Upto 75% discount , Compared to ondemand
+	Maximum savings :- Pay upfront for long term commitments
+	Reserve Specific instance types
+	we need to reserve instance for minimum of 1 year
+   - 	
+
+
+
 
 
 EC2 Tenancy Attributes
@@ -111,29 +134,8 @@ Windows server, SUSE and various others.
 with Dedicated Hosts, we can user the same physical server over the time, even if the instances is stopped and started
 
 
-EC2 Instances types and Instance Family
-############################################
-General Purpose: The most popular; used for web servers, development environments, etc.
-General Purpose A1 :- ARM based offereings
-GO M5 :- 
-
-Compute Optimized: Good for compute-intensive applications such as some scientific modeling or high-performance web servers.
-C5
-
-Memory Optimized: Used for anything that needs memory-intensive applications, such as real-time big data analytics, or running Hadoop or Spark.
-Hugely memory intensive, real-time databases such as SAP HANA.
-R5 R5a
 
 
-Accelerated Computing: Include additional hardware (GPUs, FPGAs) to provide massive amounts of parallel processing for tasks such as graphics processing.
-X1, X1e
-P3: These are the general GPU offerings, good for machine learning and offering robust parallel processing abilities.
-G3: These are the GPU offerings that are specialized for graphics-intensive tasks such as rendering, encoding, and streaming.
-F1: These are instances that offer FPGAs for accelerated processing. You can leverage the FPGAs multiple ways over time for different enhancements, and all this is aided by custom FPGA-specific AMIs (called AFIs) that offer quicker deployment and development options compared to conventional FPGAs.
-
-
-Storage Optimized: Ideal for tasks that require huge amounts of storage, specifically with sequential read-writes, such as log processing.
-H1 and D2 instances are part of the Dense storage offerings that provide high sequential read-writes for large data sets, such as in distributed Hadoop deployments. H1 and D2 instances provide immense storage on HDD, with H1 providing a maximum of 16 TB and D2 providing a maximum of 48 TB
 
 
 Types of instances
