@@ -1,15 +1,18 @@
 EC2 Notes
 -------------
-EC2
-   - EC2 basics and understanding the console
+# EC2
+   - EC2 basics,Terminology and  understanding the console
+   - 
    - EC2 Tenancy attributes
    - EC2 instance types
    - Instance family
    - Creating Instance,Security group.
    - Pem and ppk file
+   - Pem to PPK converion 
    - AWSCLI and configure AWS keys
    - Upgrade the instance.
    - AWS Metadata information.
+   - EC2 purchase options.
    - Attaching Roles.
    - Create IAM users using cli
    
@@ -30,10 +33,77 @@ EC2
 keywords :- cpu credits, 
 
 
+## EC2 Instance Launch process 
+  - OS Image
+  - Instance type Selection
+  - Networking (VPC and subnet)
+  - Key pair
+  - Role attachment
+  - Storage allocation
+  - Other options(Placement,Userdata)
+  - Launch of EC2
+
+ ## EC2 instance types
+ Each instance type comes with different specifications for CPU, memory, storage, and networking capabilities. 
+ It’s important to choose the appropriate instance type based on your specific workload requirements, performance needs, and budget considerations.
+
+ ### AWS has the following naming convention for instances
+      m5.xlarge
+       m ::- instance class 
+       5 ::- generation 
+       xlarge ::- size within the instance class he size of EC2 instances typically follows a pattern, 
+                 starting with small sizes and progressively increasing to ``medium, large, xlarge, 2xlarge``` and so on
+       		
+ ## EC2 instance types
+ - ```General Purpose```:
+   General-purpose instances are well-suited for a wide range of workloads, including ```web servers and code repositories```.
+   Employs balance between ```compute, memory, and networking``` resources.
+   With general-purpose instances, users can expect optimal performance and efficiency, as they are designed to handle diverse workloads effectively.
+   
+ - ```Compute Optimized```
+   Compute optimized instances are specifically designed to handle compute-intensive tasks that demand high-performance processors.
+   Usecases: ```Workloads, media transcoding, high-performance web servers, high-performance computing, scientific modeling, and machine learning, as well as dedicated gaming servers```.
+   hese workloads necessitate a robust and capable CPU to ensure fast and efficient processing, making compute optimized instances the ideal choice for these demanding tasks
+     
+ - ```Memory Optimized```
+   Memory optimized instances are specifically designed to deliver fast performance for workloads that involve ```processing large datasets in memory```
+   Usecases: ```elational and non-relational databases, distributed web-scale cache stores, and in-memory databases optimized for business intelligence (BI)```
+ Additionally, memory optimized instances excel in applications that require real-time processing of big unstructured data, enabling efficient and speedy data analysis and operations
+
+- ```Storage Optimized```
+  Storage optimized instances are well-suited for tasks that demand extensive, sequential read and write access to ```large data sets stored locally```.
+  By leveraging the high storage capacity and optimized storage performance of these instances, organizations can efficiently handle data-intensive workloads and achieve optimal performance for their storage-centric applications
+      
+## EC2 instance states
+  - Pending
+  - running
+  - stopping; stopped
+  - terminated
+
+## Login to EC2 instance.
+  - pem file and its permission login via linux console
+  - pem file to PPK file login via putty
+
+## Installing AWS CLI and Role Attachment 
+   - Method 1
+     ```yum install awscli```
+   - Method 2  
+     ```
+      curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+      unzip awscliv2.zip
+      cd awscliv2
+      ./install.sh
+     ```
+   - Documents
+     ```
+      https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
+      https://awscli.amazonaws.com/v2/documentation/api/latest/reference/index.html
+     ```
+
+
 EC2 Tenancy Attributes
 ----------------------
 Shared :- The EC2 instance runs on shared hardware even with other customers.
-
 Dedicated:- EC2 instance runs on hardware which will only be shared b/w same account AWS instnaces.
 
 Dedicated host is a physical server that allows us to use user our existing per-socket,per-core or even per VM based software licences which inclues
