@@ -94,7 +94,7 @@ keywords :- cpu credits,
 
 ## Login to EC2 instance.
   - pem file and its permission login via linux console
-  - pem file to PPK file login via putty
+  - pem file to PPK file conversion using puttygen and login via putty
 
 ## Installing AWS CLI and Role Attachment 
    - Method 1
@@ -105,12 +105,20 @@ keywords :- cpu credits,
       unzip awscliv2.zip
       cd awscliv2
       ./install.sh
+     aws configure  ::- Mention the region,AWS AcessKey and Secret Key 
      ```
    - Documents
      ```
       https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
       https://awscli.amazonaws.com/v2/documentation/api/latest/reference/index.html
      ```
+   - Few Sample command:
+     ```bash
+     aws iam create-group --group-name MyIamGroup
+     aws iam create-user --user-name MyUser
+     aws iam add-user-to-group --user-name MyUser --group-name IAMreadonly
+     ```
+  
  ## Types of EC2 instances
    - On demand :- Pay for what you use,No unfront fees,no commitments
    - Reserved instances
@@ -118,10 +126,38 @@ keywords :- cpu credits,
 	Maximum savings :- Pay upfront for long term commitments
 	Reserve Specific instance types
 	we need to reserve instance for minimum of 1 year
-   - 	
+   - Spot Instances
+      To offset the loss of idle infrastructure, AWS offers this excess capacity at a massive discount to drive usage. That is why spot instances pricing is so affordable in comparison to EC2 pricing on demand
+     ```This discounted Amazon EC2 spot instance pricing comes with a caveat. AWS can “pull the plug” and terminate spot instances with just a 2 minute warning. These interruptions occur when AWS needs to draw from the excess capacity to service customers who purchased reserved instances, savings plans or on-demand instance```
+      Usecases:- Big Data running on AWS EMR, Hadoop or Spark are great candidates for spot instances.
+      Distributed DBs such as Elasticsearch, Cassandra, Mongo which can handle a “reboot” of a single instance without losing data or affect service, can also run on spot instances.
 
+     	- ```Strategies for Using Spot Instances```
+     	  There are 2 key strategies for using Spot Instances:
+     		  - Maintain a minimum number of compute resources by launching a core group of On-Demand Instances and supplementing them with Spot Instances when required.
+     	  
+		  - Launch Spot instances with a fixed duration, called Spot blocks, which are designed to be uninterrupted and run continuously for the duration you choose. 
 
+     
 
+## EC2 Meta Data URL
+```http://169.254.169.254/latest/meta-data/```
+
+ <img src="ec2-metadata.png" width="600">
+ 
+ - Get the instance type
+ ```curl -s http://169.254.169.254/latest/meta-data/instance-type```
+ - Get the AMI ID
+ ```curl -s http://169.254.169.254/latest/meta-data/ami-id```
+ - Get the AWS region
+ ```curl -s http://169.254.169.254/latest/dynamic/instance-identity/document|grep region|cut -f2 -d ":"|sed 's/.```
+- Get the public IP Address
+ ```curl -s http://169.254.169.254/latest/meta-data/public-ipv4```
+ - Get the Instance ID
+ ```curl -s http://169.254.169.254/latest/meta-data/instance-id```
+
+ 
+ <img src="ec2-data.png" width="600">
 
 
 EC2 Tenancy Attributes
@@ -138,27 +174,8 @@ with Dedicated Hosts, we can user the same physical server over the time, even i
 
 
 
-Types of instances
-- on demand
-- Reserved Instances
-- spot instanes.
 
-Ondemand
---------
-Pay for what you use,No unfront fees,no commitments
 
-Reserved instances
-------------------
-Upto 75% discount , Compared to ondemand
-Maximum savings :- Pay upfront for long term commitments
-Reserve Specific instance types
-we need to reserve instance for minimum of 1 year.
-
-- convertable ReserveInstances
-   upto 54 % discount  
-
-- Spot instances
-  can get 90% cheaper than on demand instances.
 
  Dedicated hots
  A physical machines with more visibility into undelying sockets/physical cores of hardware.
@@ -210,24 +227,14 @@ Close the ports if nolonger necessary.
 
 9.Periodically audit security groups to identify those not following the established naming conventio
 
-Key based Authencation 
--------------------------
-Private and public key pair , By default 
-otption :-  we can enable password authentication system 
 
 pem to ppk files
 - Using puttygen
 
 
-MetadaURL
--------
-curl http://169.254.169.254
 
-Installing awscli
----------------------
-curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
-unzip awscli-bundle.zip
-sudo ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
+
+
 
 Configure Keys.
 aws configure
