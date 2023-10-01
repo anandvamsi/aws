@@ -63,13 +63,15 @@
 - Purchase options (ondemand,Reservation, spot)
 - Spinning for new VM
 - Understanding Security groups
-- private and public key
+- private and public key (PPK and Pem)
+- Converting pem to PPK
 - Root Volumes
-- AMI and AMI creation
+- AMI  creation
+- Usecase:: Golden AMI and tranfer AMI Across accounts
 - volumes and Snapshots
 - EBS volume creation and types
-- EBS volume attachment
-- Extending the root volume
+- EBS volume attachment and disk partitioning 
+- Extending the root volume 
 - userdata and ec2 resume during a key lost
 - EC2 Tagging and Best Stratagies
 - AMI cross region
