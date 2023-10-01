@@ -40,6 +40,7 @@ keywords :- cpu credits,
   - Key pair
   - Role attachment
   - Storage allocation
+  - Configure Security Group ::- Inbound rules.
   - Other options(Placement,Userdata)
   - Launch of EC2
 
