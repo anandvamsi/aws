@@ -90,4 +90,110 @@ You manage access in AWS by creating policies and attaching them to IAM identiti
 - ```Resource-based policies```:- Attach inline policies to resources. The most common examples of resource-based policies are Amazon S3 bucket policies
 -  ```Permissions boundaries``` :- That policy defines the maximum permissions that the identity-based policies can grant to an entity.
 -  ```Organizations SCPs``` :- Use an AWS Organizations service control policy (SCP) to define the maximum permissions for account members of an organization or organizational unit (OU). SCPs limit permissions that identity-based policies or resource-based policies grant to entities (users or roles) within the account, but do not grant permissions
--  
+
+<img src="IAM-policyEval.PNG" width="600">
+
+### Overview of  Policies
+  Most policies are stored in AWS as JSON documents Identity-based policies and policies used to set permissions   boundaries are ```JSON policy documents``` that you attach to a user or role.
+
+- One ore more individual statements
+- Optional policy-wide informaton at the top of the document.
+
+### Disecting the policy
+
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    { "Sid": "ExampleStatementID",
+      "Effect": "Allow",
+      "Action": "s3:ListAllMyBuckets",
+      "Resource": "*"
+    }
+  ]
+}
+```
+```Version``` policy element specifies the language  syntax rules that to be use to process a policy.
+2012-10-17 Current version ::- All the policy varibles will be supported in this version
+${aws:username}
+
+2008-10-17 earlier version
+
+```statement``` element is the main element for a policy.  The Statement element can contain a single statement or an array of individual statements. Each individual statement block must be enclosed in curly braces { }. For multiple statements, the array must be enclosed in square brackets [ ].
+```json "Statement": [{...},{...},{...}] ```
+
+```sid``` You can provide Sid (statement ID) as an optional identifier for the policy statement
+The Sid element supports ASCII uppercase letters (A-Z), lowercase letters (a-z), and numbers (0-9).          
+
+```Effect``` The Effect element is required and specifies whether the statement results in an allow or an explicit deny. Valid values for Effect are Allow and Deny
+
+```Principal``` Use the Principal element in a ```resource-based``` JSON policy to specify the principal that is allowed or denied access to a resource.
+
+
+
+### Policy on Multiple resources
+```json
+{
+    "Version": "2012–10–17",    
+    "Statement": {
+    "Effect": "Allow",
+    "Action": [
+        "iam:AddUserToGroup",
+        "iam:RemoveUserFromGroup",
+        "iam:GetGroup”
+        ],
+	"Resource": [
+        	"arn:aws:iam::609103258633:group/Developers",
+        	"arn:aws:iam::609103258633:group/Operators"
+        ]
+    }
+}
+```
+
+### Following identity based policy allows the implied principal to ist a single Amazon S2 bucket named example_bucket
+
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": {
+    "Effect": "Allow",
+    "Action": "s3:ListBucket",
+    "Resource": "arn:aws:s3:::example_bucket"
+  }
+}
+```
+### Multiple Policy with conditions.
+
+```
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "FirstStatement",
+      "Effect": "Allow",
+      "Action": ["iam:ChangePassword"],
+      "Resource": "*"
+    },
+    {
+      "Sid": "SecondStatement",
+      "Effect": "Allow",
+      "Action": "s3:ListAllMyBuckets",
+      "Resource": "*"
+    },
+    {
+      "Sid": "ThirdStatement",
+      "Effect": "Allow",
+      "Action": [
+        "s3:List*",
+        "s3:Get*"
+      ],
+      "Resource": [
+        "arn:aws:s3:::confidential-data",
+        "arn:aws:s3:::confidential-data/*"
+      ],
+      "Condition": {"Bool": {"aws:MultiFactorAuthPresent": "true"}}
+    }
+  ]
+}
+```
+
