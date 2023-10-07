@@ -55,3 +55,5 @@ credentials with IAM users, we recommend that you rotate access keys.
 
 ## IAM Group
 It is an identity that specifies a collection of IAM users. You can use groups to specify permissions for multiple users at a time. Groups make permissions easier to manage for large sets of users.
+
+<img src="IAM-User-Group.PNG" width="600">
