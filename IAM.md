@@ -6,6 +6,7 @@
 - IAM Role Usecases
 - IAM User Access/Secret Key
 - Key Rotation Policy
+- IAM Credential Document
 
 ## Scenario
 Point 1
@@ -47,13 +48,46 @@ users can access.
 - It's your job to determine which IAM features and resources your service users should access.
 - As you use more advanced features to do your work, you might need additional permissions.
 - ```IAM administrator``` – If you're an IAM administrator, you manage IAM identities and write policies to manage access to IAM.
+- It provides two essential functions to work together ```Authentication``` and ```Authorization```
+
+### Authentication 
+- Validates the identity of a user or a service.
+- Federate corporate identities
+
+### Athorization
+- Defines the permissions and limits access to only specific resources for the permitted user
+
+
 
 ## IAM Users
 An IAM user is an identity within your AWS account that has specific permissions for a single person or application. Where possible, we recommend relying on temporary
 credentials instead of creating IAM users who have long-term ```credentials such as passwords and access keys```. However, if you have specific use cases that require long-term
 credentials with IAM users, we recommend that you rotate access keys.
 
+### LAB::- Creating a IAM user and password for webconsole
+### LAB::- Creating IAM keys and understading the best practices.
+
 ## IAM Group
 It is an identity that specifies a collection of IAM users. You can use groups to specify permissions for multiple users at a time. Groups make permissions easier to manage for large sets of users.
 
 <img src="IAM-User-Group.png" width="600">
+
+##
+## IAM Roles
+An IAM role is an identity within your AWS account that has specific permissions.It is similar to an IAM user, but is not associated with a specific person. You can assume a role by calling an AWS CLI or AWS API.
+
+### IAM roles with temporary credentials are useful in the following situations:
+- Federated user access:: - IAM supports identity federation. If the user is already authenticated, such as through a Facebook or Google account, IAM can be made to trust that authentication method and then allow access based on it
+- Temporary IAM user permissions
+- Cross-account access
+- Service role ::-A service role is an IAM role that a service assumes to perform actions on your behalf.
+
+## Permissions and Policies
+You manage access in AWS by creating policies and attaching them to IAM identities (users, groups of users, or roles) or AWS resources. A policy is an object in AWS that, when associated with an identity or resource, defines their permissions. AWS evaluates these policies when an IAM principal (user or role) makes a request. Permissions in the policies determine whether the request is allowed or denied. Most policies are stored in AWS as JSON documents
+
+### Policy types
+- ```Identity-based policies```:- Attach managed and inline policies to ```IAM identities (users, groups to which users belong, or roles)```. Identity-based policies grant permissions to an identity
+- ```Resource-based policies```:- Attach inline policies to resources. The most common examples of resource-based policies are Amazon S3 bucket policies
+-  ```Permissions boundaries``` :- That policy defines the maximum permissions that the identity-based policies can grant to an entity.
+-  ```Organizations SCPs``` :- Use an AWS Organizations service control policy (SCP) to define the maximum permissions for account members of an organization or organizational unit (OU). SCPs limit permissions that identity-based policies or resource-based policies grant to entities (users or roles) within the account, but do not grant permissions
+-  
