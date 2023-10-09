@@ -244,3 +244,22 @@ Result Alice will be able to access the demo s3 bucket.
 }
 ```
 ``` This mean expect Bob and Alice, all the users are denied and even admin wont be able to access this s3 bucket But to make this work we need explict allow for Alice and Bob in the IAM policy ```
+
+### Policy Variables Example
+
+```json
+ {
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": [
+                "iam:*AccessKey*"
+            ],
+            "Effect": "Allow",
+            "Resource": [
+                "arn:aws:iam::888913816489:user/${aws:username}"
+            ]
+        }
+    ]
+}
+```
