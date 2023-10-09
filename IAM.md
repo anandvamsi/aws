@@ -197,3 +197,50 @@ The Sid element supports ASCII uppercase letters (A-Z), lowercase letters (a-z),
 }
 ```
 
+### Understanding the Principle Element
+A principal elemetn is used to specify things like ```IAM user,federated user, IAM role, AWS accounts, AWS services``` or other  principal entity that is allowed or denied access to a resource.
+Principal element is used with resource based plicy we cannot use a principal element in a IAM-based policy
+
+Result Alice will be able to access the demo s3 bucket.
+
+```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "SamplePolicy",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "arn:aws:iam::888913816489:user/Alice"
+            },
+            "Action": "s3:*",
+            "Resource": [
+                "arn:aws:s3:::the-demo-s3-bucket",
+                "arn:aws:s3:::the-demo-s3-bucket/*"
+            ]
+        }
+    ]
+}
+```
+### Example 2
+```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "SamplePolicy",
+            "Effect": "Deny",
+            "NotPrincipal": { 
+                "AWS": "arn:aws:iam::888913816489:user/Alice"
+                "AWS": "arn:aws:iam::888913816489:user/Bob"
+            },
+            "Action": "s3:*",
+            "Resource": [
+                "arn:aws:s3:::the-demo-s3-bucket",
+                "arn:aws:s3:::the-demo-s3-bucket/*"
+            ]
+        }
+    ]
+}
+```
+``` This mean expect Bob and Alice, all the users are denied and even admin wont be able to access this s3 bucket But to make this work we need explict allow for Alice and Bob in the IAM policy ```
