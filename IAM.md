@@ -7,6 +7,7 @@
 - IAM User Access/Secret Key
 - Key Rotation Policy
 - IAM Credential Document
+- IAM Best Practices
 
 ## Scenario
 Point 1
@@ -150,6 +151,64 @@ The Sid element supports ASCII uppercase letters (A-Z), lowercase letters (a-z),
 }
 ```
 
+### IAM Poicy with Condition Example-1 
+```json
+{
+    "Version": "2012-10-17",
+    "Statement": {
+        "Effect": "Allow",
+        "Action": "*",
+        "Resource": "*",
+        "Condition": {
+            "IpAddress": {
+                "aws:SourceIp": "115.99.177.174/32"
+            }
+        }
+    }
+}
+```
+### IAM Policy with condition Example 2
+```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "StartStopIfTags",
+            "Effect": "Allow",
+            "Action": [
+                "ec2:StartInstances",
+                "ec2:StopInstances"
+            ],
+            "Resource": "arn:aws:ec2:region:account-id:instance/*",
+            "Condition": {
+                "StringEquals": {
+                    "aws:ResourceTag/Project": "DataAnalytics",
+                    "aws:PrincipalTag/Department": "Data"
+                }
+            }
+        }
+    ]
+}
+```
+### IAM Policy with condition Example 3
+```json
+{
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "ec2:*",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestedRegion": "ap-south-1"
+        }
+      }
+    }
+  ]
+}
+```
+
+
 ### Following identity based policy allows the implied principal to ist a single Amazon S2 bucket named example_bucket
 
 ```json
@@ -263,3 +322,37 @@ Result Alice will be able to access the demo s3 bucket.
     ]
 }
 ```
+## Best practices of IAM
+- Lock away your AWS account root user access keys
+- Create individual IAM users
+- Use user groups to assign permissions to IAM users
+- Grant least privilege
+- Get started using permissions with AWS managed policies
+- Validate your policies
+- Use customer managed policies instead of inline policies
+- Use access levels to review IAM permissions
+- Configure a strong password policy for your users
+- Enable MFA
+- Use roles for applications that run on Amazon EC2 instances
+- Use roles to delegate permissions
+- Do not share access keys
+- Rotate credentials regularly
+- Remove unnecessary credentials
+- Use policy conditions for extra security
+- Monitor activity in your AWS account
+     - Using AWS cloudtrails, CLoudWatch, AWS config 
+
+## IAM compliance rules
+
+- IAM Access Keys Rotation
+- Unnecessary IAM Access Keys not used > 90
+- Unused IAM Groups
+- Inactive IAM Users
+- Unused IAM Users password > 90 days unused
+- IAM Users with Password and Access Keys
+- IAM user having policy
+- IAM user password with inactive keys
+- IAM policy should not have resource  s3.* //No full access
+- IAM with old ssh_keys
+- IAM users with keys and password enabled.
+
