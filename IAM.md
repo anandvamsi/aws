@@ -164,7 +164,7 @@ The Sid element supports ASCII uppercase letters (A-Z), lowercase letters (a-z),
 ```
 ### Multiple Policy with conditions.
 
-```
+```json
 {
   "Version": "2012-10-17",
   "Statement": [
