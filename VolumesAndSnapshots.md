@@ -33,7 +33,7 @@ You can use it to store any type of data, including file systems, transactional 
 
 
 ## EBS Volume types
-<img src="EBS-classification.PNG" width="600">
+<img src="Ebs-types.PNG" width="600">
 
 
 ##Best Practices of EBS volumes
