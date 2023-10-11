@@ -53,11 +53,11 @@ An AMI includes the following:
 - A block device mapping that specifies the volumes to attach to the instance when it’s launched.
 
 ## Preview of AMI
+<img src="AMI.PNG" width="600">
 
 
 
-
-##Best Practices of EBS volumes
+## Best Practices of EBS volumes
 - EBS volume must be encypted
 - EBS General Purpose SSD
 - EBS Volume Naming Conventions
