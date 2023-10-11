@@ -5,6 +5,7 @@
 - Volume state
 - How to Create and Attach volume
     - Disk partitioning
+- What are AWS Snapshots.
 - Creating a Snapshot out from a volume
 - Create Volume from a snapshot
 - AMI
@@ -34,6 +35,26 @@ You can use it to store any type of data, including file systems, transactional 
 
 ## EBS Volume types
 <img src="Ebs-types.PNG" width="600">
+
+## Amazon EBS Snapshots.
+- Snapshots capture a point-in-time state of an instance.
+- Can be used to convert an unencrypted volume to an encrypted volume.
+- Snapshots are stored on Amazon S3
+- Even though snapshots are saved incrementally, the snapshot deletion process is designed so that you need to retain only the most recent snapshot to restore the volume.
+- EBS volumes are AZ specific, but snapshots are region specific
+- Volumes can be created from EBS snapshots that are the same size or larger.
+
+## AMI Amazon Machine Image
+An Amazon Machine Image (AMI) is a special type of virtual appliance that is used to create a virtual machine within the Amazon Elastic Compute Cloud (“EC2”).
+
+An AMI includes the following:
+- A template for the root volume for the instance (for example, an operating system, an application server, and applications).
+- Launch permissions that control which AWS accounts can use the AMI to launch instances.
+- A block device mapping that specifies the volumes to attach to the instance when it’s launched.
+
+## Preview of AMI
+
+
 
 
 ##Best Practices of EBS volumes
