@@ -1,0 +1,16 @@
+- Lead the development and implementation of CI/CD pipelines, resulting in a 40% reduction in deployment time and an increase in release frequency
+tools used are jenkins,github,code commit and code build
+
+- Collaborated with development and operations teams to ensure seamless integration and alignment of goals, fostering a culture of collaboration- Migrated inhouse 
+deployment system to cloud managed solution
+
+- Implemented containerization with Docker and orchestration to improve scalability and reliability of microservices
+
+- Conducted regular security audits, vulnerability assessments, and implemented security best practices tools used sentinal one,AWS Inspector gauging the machines against CIS and cloud well architected frameworks
+
+- Collabration with Entripse cloud security team during security events/threads 
+
+- worked on Datalake for the data tansformation from S3 to Relational databases in the incrementals using Glue jobs.
+
+- Expertise in designing and creating Cloud networks and tenant Account allocations using VPC peering and Transit Gateways
+
