@@ -4,7 +4,8 @@
 - what are different types of EBS volumes
 - Volume state
 - How to Create and Attach volume
-    - Disk partitioning
+    - Disk partitionin
+- How to extent the EBS volume.
 - What are AWS Snapshots.
 - Creating a Snapshot out from a volume
 - Create Volume from a snapshot
