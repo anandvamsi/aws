@@ -16,7 +16,7 @@ Create a s3 bucket and attach below policy
                 "s3:PutObjectAcl"
             ],
             "Resource": [
-                "arn:aws:s3:::mykplabs-central/*"
+                "arn:aws:s3:::mylabs-central/*"
             ]
         }
      ]
