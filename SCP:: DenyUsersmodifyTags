@@ -1,0 +1,22 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Stmt1700888472705",
+      "Action": [
+        "iam:UntagUser",
+        "iam:TagUser"
+      ],
+      "Effect": "Deny",
+      "Resource": "*",
+      "Condition": {
+        "ForAllValues:StringEquals": {
+          "aws:TagKeys": [
+            "Expiry",
+            "cost-center"
+          ]
+        }
+      }
+    }
+  ]
+}
