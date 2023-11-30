@@ -16,4 +16,13 @@ usecase: pintest 10x writer performance,40% cost redudction
 
 - Infra for FM training and inference
 - Tools to build with LLMs and other FMs
-- 
+
+ # Purpose-build chip for generative AI and ML training.
+ - AWS traininum2: optimized for traning FMs with hundreds of billions to trillions of paramters
+ - 4x faster than AWS trainium
+
+# AWS Neuron:
+SDK to optimize machine learning on AWS Trainium and inferentia
+
+#AWS BedRock
+The earliest way to build and scale gen AI application with LLMs and other FMs
