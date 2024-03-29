@@ -11,7 +11,7 @@
 
 ## Scenario
 Point 1
-- Imagine you joined a company and you would get Access card and subject to access spefic rooms
+- Imagine you joined a company and you would get Access card and subject to access spedfic rooms
  - you wont access to HR room officials
  - you wont access to  Company Executives
  etc
