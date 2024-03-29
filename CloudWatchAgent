@@ -104,8 +104,8 @@ Append the configration,since cloudwatch already started basic infra
 
 
 
-
-
+## Docker command to send the logs to a ec2.
+docker run -it --log-driver=awslogs --log-opt awslogs-region=us-west-2     --log-opt awslogs-group=myLogGroup --log-opt awslogs-create-group=true  node:alpine
 
 
 
