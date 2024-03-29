@@ -55,7 +55,7 @@ users can access.
 - Validates the identity of a user or a service.
 - Federate corporate identities
 
-### Athorization
+### Authorization
 - Defines the permissions and limits access to only specific resources for the permitted user
 
 
