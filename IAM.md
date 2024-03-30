@@ -151,7 +151,7 @@ The Sid element supports ASCII uppercase letters (A-Z), lowercase letters (a-z),
 }
 ```
 
-### IAM Poicy with Condition Example-1 
+### IAM Policy with Condition Example-1 
 ```json
 {
     "Version": "2012-10-17",
