@@ -1,5 +1,5 @@
 # IAM
-- what is IAM
+- IAM
 - IAM Features
 - IAM users,Roles,Policies
 - IAM Group
