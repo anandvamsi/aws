@@ -5,6 +5,9 @@ These temporary credentials consist of an access key ID, a secret access key, an
 ## Advantages of Assume Role
 
 
+<img src="IAM-AssumeRoles.PNG" width="600">
+
+
 ## Steps to create Assume Role and attach to IAM user.
 - Create a IAM user with web access and no policy
 - Create a IAM role Trusting Same Account "This Account" and attach any policy the user would like to perform
