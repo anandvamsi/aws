@@ -75,12 +75,18 @@ It is an identity that specifies a collection of IAM users. You can use groups t
 
 ##
 ## IAM Roles
+A role is a set of permissions that grant access to actions and resources in AWS.
 An IAM role is an identity within your AWS account that has specific permissions.It is similar to an IAM user, but is not associated with a specific person. You can assume a role by calling an AWS CLI or AWS API.
 
+- Better security
+- No need for rotation.
+- No keys in the code.
+
 ### IAM roles with temporary credentials are useful in the following situations:
+
 - Federated user access:: - IAM supports identity federation. If the user is already authenticated, such as through a Facebook or Google account, IAM can be made to trust that authentication method and then allow access based on it
 - Temporary IAM user permissions
-- Cross-account access
+- Cross-account access:
 - Service role ::-A service role is an IAM role that a service assumes to perform actions on your behalf.
 
 ## Permissions and Policies
