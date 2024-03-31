@@ -67,6 +67,18 @@ credentials with IAM users, we recommend that you rotate access keys.
 
 ### LAB::- Creating a IAM user and password for webconsole
 ### LAB::- Creating IAM keys and understading the best practices.
+```bash
+# Installing awscli in centos/ubuntu
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+cd awscliv2
+sudo ./aws/install
+```
+
+## AWS CLI to list users
+```bash
+aws iam list-users
+```
 
 ## IAM Group
 It is an identity that specifies a collection of IAM users. You can use groups to specify permissions for multiple users at a time. Groups make permissions easier to manage for large sets of users.
@@ -93,7 +105,10 @@ An IAM role is an identity within your AWS account that has specific permissions
 You manage access in AWS by creating policies and attaching them to IAM identities (users, groups of users, or roles) or AWS resources. A policy is an object in AWS that, when associated with an identity or resource, defines their permissions. AWS evaluates these policies when an IAM principal (user or role) makes a request. Permissions in the policies determine whether the request is allowed or denied. Most policies are stored in AWS as JSON documents
 
 ### Policy types
-- ```Identity-based policies```:- Attach managed and inline policies to ```IAM identities (users, groups to which users belong, or roles)```. Identity-based policies grant permissions to an identity
+- ```Identity-based policies```:- Attach managed and inline policies to ```IAM identities (users, groups to which users belong, or roles)```. Identity-based policies grant permissions to an identity.
+i. ```AWS Managed Policies```: These are managed by AWS and cover common use cases. Examples include AmazonS3ReadOnlyAccess, AdministratorAccess, etc.
+ii. ```Customer Managed Policies```: These are policies that you create and manage yourself within your AWS account.
+  
 - ```Resource-based policies```:- Attach inline policies to resources. The most common examples of resource-based policies are Amazon S3 bucket policies
 -  ```Permissions boundaries``` :- That policy defines the maximum permissions that the identity-based policies can grant to an entity.
 -  ```Organizations SCPs``` :- Use an AWS Organizations service control policy (SCP) to define the maximum permissions for account members of an organization or organizational unit (OU). SCPs limit permissions that identity-based policies or resource-based policies grant to entities (users or roles) within the account, but do not grant permissions
