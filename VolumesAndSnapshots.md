@@ -11,6 +11,7 @@
 - Create Volume from a snapshot
 - AMI
 - Copy AMI to Different Regions.
+- Instance Store.
 
 
 ## EBS Volumes
@@ -55,6 +56,41 @@ An AMI includes the following:
 
 ## Preview of AMI
 <img src="AMI.PNG" width="600">
+
+
+## Instance Store.
+An Amazon Web Services (AWS) instance store is a type of storage option provided by AWS for EC2 (Elastic Compute Cloud) instances. It provides temporary block-level storage for EC2 instances, meaning the data stored on an instance store volume is temporary and will be lost if the ```instance is stopped, terminated```, or if the underlying hardware fails.
+
+```Instance store volumes are physically attached to the host computer that runs the EC2 instance and offer high input/output operations per second (IOPS) and low latency, making them suitable for applications that require high-performance storage```.
+
+It's important to note that unlike Amazon EBS (Elastic Block Store) volumes, instance store volumes cannot be detached and reattached to other instances. Additionally, the capacity of instance store volumes varies depending on the instance type, and ```they are not designed for long-term storage or critical data that needs to be preserved beyond the lifetime of the instance```.
+
+
+## Instance store vs ## EBS volumne.
+Instance store volumes and Amazon EBS (Elastic Block Store) volumes are two different types of storage options provided by Amazon Web Services (AWS) for EC2 (Elastic Compute Cloud) instances. Here are the main differences between them:
+
+### Persistance.
+Instance store volumes are ephemeral, meaning the data stored on them is temporary and will be lost if the instance is stopped, terminated, or if the underlying hardware fails.
+EBS volumes are persistent. The data stored on them remains intact even when the instance is stopped or terminated, and they can be detached from one instance and attached to another.
+
+### Durability.
+Instance store volumes are not designed for long-term storage or critical data that needs to be preserved beyond the lifetime of the instance. They do not have built-in redundancy.
+EBS volumes are highly durable and redundant. They are automatically replicated within their Availability Zone to protect against component failure, and users can also create snapshots of EBS volumes, which are stored in Amazon S3 (Simple Storage Service) and can be used to create new volumes.
+
+### Performance.
+Instance store volumes generally offer higher I/O performance and lower latency compared to EBS volumes because they are physically attached to the host computer that runs the EC2 instance.
+EBS volumes are network-based storage, which may introduce some additional latency compared to instance store volumes, although they offer consistent performance regardless of the instance type.
+
+
+### Capacity
+The capacity of instance store volumes varies depending on the instance type, and they are typically smaller compared to EBS volumes.
+EBS volumes can range in size from 1 GB to 16 TB, and users can also create striped volumes (RAID 0) for increased performance or mirrored volumes (RAID 1) for increased reliability.
+
+### Flexibility
+Instance store volumes are tightly coupled to the EC2 instance and cannot be detached and reattached to other instances.
+EBS volumes can be detached from one instance and attached to another, making them more flexible for various use cases such as data migration, backups, and disaster recovery.
+
+
 
 
 
