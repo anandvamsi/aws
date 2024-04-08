@@ -2,6 +2,8 @@
 In Amazon Web Services (AWS), a load balancer is a managed service that helps ```distribute incoming network traffic across multiple targets```,such as EC2 instances, containers, IP addresses, or Lambda functions. 
 The primary purpose of a load balancer is to enhance the availability and fault tolerance of your applications by evenly distributing traffic across multiple resources, thereby preventing any single resource from becoming overwhelmed and causing a bottleneck.
 
+<img src="LoadBalancer.PNG" width="600">
+
 ## Types of Load Balancer.
 Layer 4 (Transport Layer): Network Load Balancer (NLB) operates at this layer, distributing traffic based on IP protocol data.
 
