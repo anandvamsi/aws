@@ -67,3 +67,14 @@ Here are some key features and functionalities of CloudWatch Logs:
 
 ```Retention and Archiving```: you can configure retention policies to control how long log data is retained in CloudWatch Logs and optionally archive log data to Amazon S3 for long-term storage and analysis.
 
+### 
+
+### Steps to configure and install cloudwatch Agent
+```bash
+sudo yum install amazon-cloudwatch-agent
+systemctl enable amazon-cloudwatch-agent.service
+sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-config-wizard
+systemctl enable amazon-cloudwatch-agent.service
+sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a fetch-config -m ec2 -c file:/opt/aws/amazon-cloudwatch-agent/bin/config.json -s
+```
+
