@@ -1,4 +1,4 @@
-# Cloudtrail
+# CloudTrail
 - what is cloudtrail
 - Key Features of cloudtrail
 
