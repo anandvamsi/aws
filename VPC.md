@@ -67,3 +67,51 @@ Range: 224.0.0.0 to 239.255.255.255
 ## CLASS E — Range: 240.0.0.0 to 255.255.255.255
 Class E IP addresses are a set of IP addresses reserved specifically for research purposes. Unlike other IP address classes, they are not intended for general use in networking
 
+
+## VPC.
+AWS VPC (Amazon Virtual Private Cloud) is a service provided by Amazon Web Services (AWS) that allows users to create a private, isolated section of the AWS cloud where they can launch their resources and services. It enables users to build a virtual network in the AWS cloud, complete with subnets, route tables, and security settings, similar to how they would set up a traditional network in an on-premises data center.
+
+Note::- AWS default VPC with this CIDR block 172.31.0.0/16. This provides 65,536 private IPv4 address
+
+### Here are the components of VPC.
+
+```Isolated Virtual Network```: AWS VPC provides a logically isolated section of the AWS cloud where users can launch AWS resources, such as EC2 instances, databases, and load balancers, within their own virtual network.
+
+```Subnets```: Users can divide their VPC into multiple subnets, each associated with a specific Availability Zone (AZ) within a selected AWS region. Subnets allow users to organize their resources and control network traffic flow.
+
+```Internet Gateway (IGW)```: An Internet Gateway enables resources within the VPC to communicate with the public Internet and vice versa. It serves as a gateway for outbound and inbound traffic.
+Route tables act as maps for directing traffic within your VPC. They define where network traffic is directed, be it to other instances within the VPC or outside to the internet.
+
+```Route Tables```: Route tables define the routing rules for traffic within the VPC. Users can configure route tables to direct traffic between subnets, to an Internet Gateway, or to other network devices, such as Virtual Private Gateways (VGWs) for connecting to on-premises networks.
+
+```Security Groups and Network Access Control Lists (NACLs)```: Users can define security rules at the instance level using security groups and at the subnet level using NACLs. These security mechanisms allow users to control inbound and outbound traffic to their resources.
+
+```VPC Peering```: VPC Peering allows users to connect multiple VPCs within the same AWS region and route traffic between them as if they were part of the same network.
+
+### Here is the VPC CIDR and subnet CIDR.
+
+##### MainSubnet
+10.0.0.0/16 
+
+##### VPC CIDR
+- subnet1:- 10.0.1.0/24
+- subnet2:- 10.0.2.0/24
+- subnet3:- 10.0.3.0/24
+
+
+Note 5 IPs will be reserved 
+- 10.0.1.0 :- For Network
+- 10.0.1.1 :- AWS routing 
+- 10.0.1.2 :- AWS DNS
+- 10.0.1.3 :- for AWS Future purpose
+- 10.0.1.255 :- Boradcasting
+- By default subnets can talk each other no rule is required in RT
+
+### Route table 
+A default/Main RT will be created when VPC is created 
+if there is no route table created All the subnets will be associated with default RT.
+<img src="IP.png" width="600">
+
+<img src="AWS-RT.PNG" width="600">
+
+
