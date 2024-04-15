@@ -107,7 +107,16 @@ Note 5 IPs will be reserved
 - 10.0.1.255 :- Boradcasting
 - By default subnets can talk each other no rule is required in RT
 
+
+### VPC
+<img src="VPC.PNG" width="600">
+
+
+### Subnet 
+
+
 ### Route table 
+A route table containing a set of rules, called routes, that are used to determine where network traffic from your subnet or gateway is directe
 A default/Main RT will be created when VPC is created 
 if there is no route table created All the subnets will be associated with default RT.
 <img src="IP.png" width="600">
