@@ -44,6 +44,8 @@ CIDR can create networks of different sizes based on their needs, rather than be
 
 <img src="CIDR-table.PNG" width="600">
 
+#### Subnet calculators
+https://www.davidc.net/sites/default/subnets/subnets.html
 
 
 ## Private IP and Public IP
