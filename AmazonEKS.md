@@ -50,3 +50,27 @@ kubectl get pods
 ip-10-XXXXX.us-west-2.compute.internal   Ready    <none>   39m   v1.28.3-eks-e71965b
 ip-10-XXXXX.us-west-2.compute.internal   Ready    <none>   40m   v1.28.3-eks-e71965b
 ```
+
+
+## How to login from Local.
+- Install and login to gimme-me-creds
+- Execute eksctl command
+```bash
+  eksctl create iamidentitymapping --cluster Nginx --region=us-west-2 --arn  arn:aws:iam::21fffff83102:role/UsersGroupAdmin --group system:masters --username admin --profile hv-itffops-dev
+2024-09-10 16:29:04 [ℹ]  checking arn arn:aws:iam::210001852:role/UsersGroupAdmin against entries in the auth ConfigMap
+2024-09-10 16:29:04 [ℹ]  adding identity "arn:aws:iam::2100ff101852:role/UsersGroupAdmin" to auth ConfigMap
+```
+- Download the kube config
+```bash
+aws eks --region us-west-2 update-kubeconfig --name Nginx --profile hv-itCCs-dev
+```
+
+##  Now execute kubectl command
+```bash
+kubectl get ns
+NAME              STATUS   AGE
+default           Active   277d
+kube-node-lease   Active   277d
+kube-public       Active   277d
+kube-system       Active   277d
+```
