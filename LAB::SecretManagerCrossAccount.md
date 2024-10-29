@@ -89,7 +89,7 @@ Policy for the KMS key
 }
 ```
 
-## Secret Manager Secret Manager
+## Secret Manager resource based policy
 ```bash
 {
   "Version" : "2012-10-17",
