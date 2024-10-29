@@ -51,3 +51,69 @@
 ```bash
 aws secretsmanager get-secret-value --secret-id arn:aws:secretsmanager:us-west-2:28311852:secret:newkey-???  --region us-west-2
 ```
+
+
+### Optional Security in the Policies
+In the AWS organization we can mention the only the accounts in the org can access the policy 
+
+Policy for the KMS key
+```bash
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "AllowCrossAccount",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "kms:*",
+            "Resource": "*",
+            "Condition": {
+                "StringEquals": {
+                    "aws:PrincipalOrgID": "o-<ORG-ID>z"
+                },
+                "StringLike": {
+                    "aws:PrincipalArn": "arn:aws:iam::*:role/forsecrets"
+                }
+            }
+        },
+        {
+            "Sid": "AllowFullAcesss",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "arn:aws:iam::AccountA_ID_1852:root"
+            },
+            "Action": "kms:*",
+            "Resource": "*"
+        }
+    ]
+}
+```
+
+## Secret Manager Secret Manager
+```bash
+{
+  "Version" : "2012-10-17",
+  "Statement" : [ {
+    "Sid" : "UsePrincipalArnInsteadOfNotPrincipalWithDeny",
+    "Effect" : "Allow",
+    "Principal" : "*",
+    "Action" : "secretsmanager:GetSecretValue",
+    "Resource" : "*",
+    "Condition" : {
+      "StringEquals" : {
+        "aws:PrincipalOrgID" : "o-zXXXXXlyz"
+      },
+      "StringLike" : {
+        "aws:PrincipalArn" : "arn:aws:iam::*:role/forsecrets"
+      }
+    }
+  }, {
+    "Sid" : "AllowFullAcesss",
+    "Effect" : "Allow",
+    "Principal" : {
+      "AWS" : "arn:aws:iam::AccountA_ID_1852:root"
+    },
+    "Action" : "secretsmanager:*",
+    "Resource" : "*"
+  } ]
+}
