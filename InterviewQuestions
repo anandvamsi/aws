@@ -2,3 +2,14 @@ What strategies do you employ for team management and mentoring in a DevSecOps e
 Can you provide an example of how you've implemented security best practices in your cloud environments?
 How have you utilized CI/CD pipelines in your previous roles to enhance deployment processes?
 Can you describe your experience managing multi-account AWS environments and ensuring compliance?
+
+
+
+- What VPC peering can't solve
+- When EKS Fargate makes sense
+- When to use Helm vs Kustomize
+- Why GitOps pull beats push in prod
+- When to use initContainers vs lifecycle hooks
+- What nodeSelector vs affinity actually control
+- When to use spot over on demand in production
+- Why DaemonSet is not a good fit for scaling workers
