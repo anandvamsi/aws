@@ -5,11 +5,93 @@ Can you describe your experience managing multi-account AWS environments and ens
 
 
 
-- What VPC peering can't solve
-- When EKS Fargate makes sense
+## What VPC peering can't solve
+```bash
+VPC peering only provides point-to-point connectivity. It doesn’t support transitive routing, overlapping CIDRs,
+or scalable hub-and-spoke designs. For larger networks, Transit Gateway or PrivateLink are better solutions.
+That’s why AWS introduced Transit Gateway and PrivateLink for more complex multi-VPC or hybrid network designs
+```
+## When EKS Fargate makes sense
+```bash
+Serverless Operations / No Node Management
+Small to Medium Workloads
+Bursty or Unpredictable Workloads
+Multi-Tenant Clusters / Strong Isolation Needs
+Dev/Test Environments
+Tighter Security Boundaries
+```
+
 - When to use Helm vs Kustomize
+```bash
+Native Kubernetes Integration
+Kustomize is built into kubectl (kubectl apply -k).
+No extra tool or client needed, unlike Helm which requires the Helm CLI.
+Pure Declarative YAML (No Templating Language)
+Kustomize works with standard YAML + overlays.
+Helm introduces a templating language (Go templates) → adds complexity and logic that’s not native YAML.
+No Hidden State / Release Metadata
+Helm maintains state in Kubernetes (via ConfigMaps/Secrets in the cluster).
+Kustomize is stateless → what’s in Git is exactly what gets applied. This is cleaner for GitOps workflows.
+Easy Environment Overlays Without Duplication
+Kustomize overlays let you apply small patches to a base config.
+With Helm, managing multiple environments means separate values.yaml files, which can get messy to maintain.
+Better GitOps Alignment
+Tools like ArgoCD and Flux natively support Kustomize without extra plugins.
+Helm often needs additional controllers (e.g., Helm Operator) to fully integrate with GitOps.
+
+Security & Simplicity
+
+Kustomize applies transformations only — no templating engine, no client-side scripting, no Tiller-like component (old Helm v2 issue).
+
+This reduces the attack surfac
+
+
+
+
+```
 - Why GitOps pull beats push in prod
-- When to use initContainers vs lifecycle hooks
+
+## When to use initContainers vs lifecycle hooks
+```bash
+Init containers are special containers in Kubernetes that run before app containers.
+They’re used for setup tasks like waiting for dependencies, running migrations, or preparing configuration.
+They always run to completion before the main containers start
+```
+
+## Usecases
+```bash
+Wait for dependencies (e.g., ensure a DB is up before app starts).
+Configuration setup (e.g., fetch config files from S3 before starting the app).
+Data migration / schema check (e.g., run DB migrations before the app runs).
+Permission setup (e.g., set volume ownership/permissions before main app uses it).
+```
+```bash
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myapp-pod
+spec:
+  initContainers:
+  - name: init-db
+    image: busybox
+    command: ['sh', '-c', 'until nslookup mydb; do echo waiting for db; sleep 2; done']
+  containers:
+  - name: myapp
+    image: nginx
+    ports:
+    - containerPort: 80
+```
+
+## What is the difference between init containers and PostStart and PreStop
+```bash
+Init containers are best when you need to prepare the environment before the main app runs — for example, fetching secrets, waiting for dependencies, or setting permissions. 
+Lifecycle hooks (postStart, preStop) are tied to the app container itself, so they’re better for startup/shutdown logic like warming caches or graceful termination.
+In short:
+Init containers = environment setup before app start
+Lifecycle hooks = container-specific actions during start/stop.”
+```
+
+
 - What nodeSelector vs affinity actually control
 - When to use spot over on demand in production
 - Why DaemonSet is not a good fit for scaling workers
