@@ -170,6 +170,11 @@ Limit resources (e.g., quotas per team).
 ``` 
     
 - 8. In a monorepo setup, how do you ensure that only relevant services are built and deployed in a CI/CD pipeline?
+```bash
+ ### Service-to-Directory Mapping
+Each service lives in a dedicated directory (services/payment, services/auth, etc.).
+Pipeline logic maps directory changes to the corresponding service build/deployment.
+    
 - 9. How do you implement a canary deployment strategy with real-time monitoring rollback in a CI/CD system?
 - 10. How do you manage secrets and config securely at scale in Kubernetes without compromising GitOps workflows?
 
