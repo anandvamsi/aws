@@ -14,7 +14,7 @@ There are Multiple ways we can install either in VPC within the accounts or shar
 - select the security group which allow all the traffic to the CIDR.
 
 ### Endpoints-Creation-2
-- Create VPC endpoints for below components
+- Create VPC endpoints for below components from the master account.
 ```bash
 com.amazonaws.ap-south-1.airflow-env
 com.amazonaws.ap-south-1.logs
