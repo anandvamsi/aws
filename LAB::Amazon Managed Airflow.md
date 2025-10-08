@@ -20,4 +20,3 @@ com.amazonaws.ap-south-1.airflow-env
 com.amazonaws.ap-south-1.logs
 com.amazonaws.ap-south-1.monitoring
 ```
-
