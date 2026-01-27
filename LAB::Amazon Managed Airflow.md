@@ -10,7 +10,8 @@ There are Multiple ways we can install either in VPC within the accounts or shar
 ### In the shared(Parent) Account where the VPC created
 
 ### Endpoints-Creation-1
-- Create VPC endpoint and select ```PrivateLink Ready partner services``` and share the vpcend-point (com.amazonaws.vpce.us-west-2.vpce-svc-XXXXXXc36a7a9(for both web and DB) ) , select the vpc and subnets which are used while creation.
+- Grab two vpc-endservices strngs (com.amazonaws.vpce.us-west-2.vpce-svc-XXXXXXc36a7a9) for db and web will be optained from apache airflow interface.
+- Create VPC endpoint and select ```PrivateLink Ready partner services```  and use endpoints mentioned in step 1 (com.amazonaws.vpce.us-west-2.vpce-svc-XXXXXXc36a7a9(for both web and DB) ) , select the vpc and subnets which are used while creation.
 - select the security group which allow all the traffic to the CIDR.
 
 ### Endpoints-Creation-2
