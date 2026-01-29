@@ -17,7 +17,5 @@ There are Multiple ways we can install either in VPC within the accounts or shar
 ### Endpoints-Creation-2
 - Create VPC endpoints for below components from the master account.
 ```bash
-com.amazonaws.ap-south-1.airflow-env
-com.amazonaws.ap-south-1.logs
-com.amazonaws.ap-south-1.monitoring
+com.amazonaws.us-west-2.s3
 ```
