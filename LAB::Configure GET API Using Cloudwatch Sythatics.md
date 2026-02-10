@@ -69,6 +69,6 @@ exports.handler = async () => {
 ```
 
 - In Schedule section , use cron or  Run canary mention the minutes.
-- In VPC settings, mention the vpc,subnets and make sure security group have rule 0.0.0.0/0 for the port 53
+- In VPC settings, mention the vpc,subnets (make sure the subnets have NAT or internet gateway)and make sure security group have rule 0.0.0.0/0 for the port 53
 - Choose ```create role`` at the end to complete the process.
 
