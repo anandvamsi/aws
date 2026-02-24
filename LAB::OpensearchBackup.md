@@ -1,4 +1,4 @@
-# Opensearch Back
+# Opensearch Backup
 Strategy to backup opensearch cluster indicies to s3 bucket, considering the condition that you have an opensearch cluster with indices in that and able to login to kibana with kiban URL
 
 ## Create a s3 bucket and copy the ARN
