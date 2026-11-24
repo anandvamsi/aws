@@ -236,3 +236,36 @@ Round 3 – Leadership, Engineering Influence & Production Principles (30 mins)
 • You’ve been asked to move from centralized logging to a service-mesh-based observability model. Your tradeoffs?
 • Describe how you simulate production-level chaos in staging for Kubernetes.
 • How do you handle pushback from leadership when your SLOs threaten velocity?
+
+```
+### Flipkart Interview Questions
+
+```bash
+ Senior DevOps Engineer Interview at Flipkart
+Round 1: Systems & Design
+1. Design the infrastructure for a Big Billion Days sale where traffic goes from 1x to 20x.
+2. How do you keep inventory consistent when thousands buy the same item at once?
+3. Design load shedding so checkout survives even when search and recommendations fall over.
+4. How would you pre-provision capacity for a spike you can predict to the day?
+5. Design a cache layer so a cache failure doesn't stampede the database.
+6. How do you roll out a change to thousands of services safely during sale week?
+
+Round 2: RCA & Troubleshooting
+1. Checkout latency rises 20 minutes into the sale. First moves?
+2. Items show in stock that aren't. How do you trace where the data diverged?
+3. A cache node dies and the database is now on fire. How do you contain it?
+4. A change works at 100 nodes and fails at 1,000. What differs at scale?
+
+Round 3: Leadership & Judgement
+1. How do you run a code freeze for peak season and still ship urgent fixes?
+2. Tell me about an outage during a high-revenue event. First 15 minutes?
+3. How do you decide which features to switch off to protect revenue?
+
+💡 TL;DR: 
+1. If you haven't planned for 20x peaks, 
+2. designed graceful degradation on revenue paths, 
+3. or debugged a cache stampede at scale,
+Flipkart won't just test you; it'll expose the cracks in your production mindset. But what if you could train on this first?
+
+🚨 It isn't about memorizing answers. It's how you think under pressure. We run a mock in this exact format, work through 300+ outages, and rebuild your answers to senior level. You leave with a gap list and a plan.
+```
